@@ -1,7 +1,8 @@
 ### Welcome to the official JUIT website
 
 ## Introduction
-JUIT is an library which allows to create apps like browsers,Calculators and so on.
+JADT is an a library for making apps specifically.
+
 
 ## Links To Reps
 Video Package -[View Package On Github](https://github.com/RishonJR/Video)
@@ -9,11 +10,10 @@ Video Package -[View Package On Github](https://github.com/RishonJR/Video)
 Audio Package - [View The Package On Github](https://github.com/RishonJR/Audio)
 
 ## Releases 
-There Are No Release As it's currently in beta.
-This section will be available once 1.0_rc1 will be released.
+View the github releases :
 
 ## Information On releases
-**JUIT 1.0**- There will be  1 alpha release, 5 release candidates, and 1 release.
+**JADT 1.0**- There will be  1 alpha release, 5 release candidates, and 1 release.
 ### Status for these releases:
 **1.0_release**- not yet started
 
@@ -71,3 +71,5 @@ This section will be available once 1.0_rc1 will be released.
 1)1.0_rc1 has been Released... keep testing and report bugs if there are any...
 
 2)1.0_rc2 has been released... i didnt expect to take as long as i expected.keep testing and report bugs if there are any...
+3) 1.0_rc3 will be remain unreleased to the public.
+4) 1.0_rc4 will includ many bug fixes and major rewrites, expexted to see it release on October 6th.
