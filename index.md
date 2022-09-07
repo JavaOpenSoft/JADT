@@ -1,4 +1,4 @@
-### Welcome to the official JUIT website
+### Welcome to the official JADT website
 
 ## Introduction
 JADT is an a library for making apps specifically.
@@ -30,39 +30,39 @@ View the github releases :
 **1.0_rc1** - finished and released.
 
 
-**JUIT 0.9** - This is a beta,un- usable release. source code downloadable. source code will be continously updated.
+**JADT 0.9** - This is a beta,un- usable release. source code downloadable. source code will be continously updated.
 
 **Status:**_ Finished.
 
-**JUIT 0.8** - This is a beta,un- usable release. source code downloadable. source code will be continously updated.
+**JADT 0.8** - This is a beta,un- usable release. source code downloadable. source code will be continously updated.
 
 **Status:** - Finished.
 
-**JUIT 0.7** - This is a beta,un- usable release. source code downloadable. source code will be continously updated.
+**JADT 0.7** - This is a beta,un- usable release. source code downloadable. source code will be continously updated.
 
 **Status:**_ Finished.
 
-**JUIT 0.6** - This is a beta,un- usable release. source code downloadable. source code will be continously updated.
+**JADT 0.6** - This is a beta,un- usable release. source code downloadable. source code will be continously updated.
 
 **Status:**-Finished.
 
-**JUIT 0.5** - This is a beta,un- usable release. source code downloadable. source code will be continously updated.
+**JADT 0.5** - This is a beta,un- usable release. source code downloadable. source code will be continously updated.
 
 **Status:**-Finished.
 
-**JUIT 0.4** - This is a beta,un- usable release. source code downloadable. source code will be continously updated.
+**JADT 0.4** - This is a beta,un- usable release. source code downloadable. source code will be continously updated.
 
 **Status:** - Finished.
 
-**JUIT 0.3** - This is a beta,un- usable release. source code downloadable. source code will be continously updated.
+**JADT 0.3** - This is a beta,un- usable release. source code downloadable. source code will be continously updated.
 
 **Status:** - Finished.
 
-**JUIT 0.2** - This is a beta,un- usable release. source code downloadable. source code will be continously updated.
+**JADT 0.2** - This is a beta,un- usable release. source code downloadable. source code will be continously updated.
 
 **Status:** - Finished.
 
-**JUIT 0.1** - This is a beta,un- usable release. source code downloadable. source code will be continously updated.
+**JADT 0.1** - This is a beta,un- usable release. source code downloadable. source code will be continously updated.
 
 **Status:** - Finished.
 
