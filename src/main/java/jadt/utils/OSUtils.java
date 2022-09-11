@@ -1,6 +1,8 @@
 package jadt.utils;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Locale;
 
 @SuppressWarnings("unused")
@@ -75,6 +77,27 @@ public class OSUtils {
     	osWithVersion = osWithVersion.toLowerCase(Locale.ENGLISH);
     	return osWithVersion;
     }
+    public String[] getLinuxDistributionInformation(){
+        String[] cmd = {
+                "/bin/sh", "-c", "cat /etc/*-release" };
+        String[] info = new String[3];
+        try {
+            Process process = Runtime.getRuntime().exec(cmd);
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(
+                    process.getInputStream()));
 
+            String line = "";
+            while ((line = bufferedReader.readLine()) != null) {
+                int i = 0;
+                info[i] = line;
+                i++;
+            }
+        } catch (IOException e) {
+
+            e.printStackTrace();
+        }
+        return info;
+    }
     
 }
+

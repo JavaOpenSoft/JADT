@@ -1,6 +1,6 @@
 package jadt.utils.Calender;
-import jadt.Layouts.FlowLayout;
-import jadt.Core.Window;
+import jadt.layouts.FlowLayout;
+import jadt.core.Window;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;

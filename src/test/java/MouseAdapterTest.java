@@ -1,4 +1,4 @@
-import jadt.Core.Window;
+import jadt.core.Window;
 import jadt.utils.OSUtils;
 
 public class MouseAdapterTest {

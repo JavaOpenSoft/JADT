@@ -5,15 +5,14 @@ import jadt.utils.Clock.Time;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
-public class Date extends Time {
-    java.util.Date date = new java.util.Date();
-    public String getDate()
+public class Date extends Time{
+    private final java.util.Date date = new java.util.Date();
+    public String getCurrentDate()
     {
-
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yy");
         return formatter.format(date);
     }
-    public void printDate()
+    public void printCurrentDate()
     {
         System.out.println(getDate());
     }
@@ -23,7 +22,7 @@ public class Date extends Time {
     public void print(String str){
         System.out.println(str);
     }
-    public String getDay(){
+    public String getCurrentDay(){
         return LocalDate.now().getDayOfWeek().name();
     }
     public int getDayOfWeek(){
@@ -41,13 +40,14 @@ public class Date extends Time {
     public int getDayOfCentury(){
         return getDayOfDecade()*10;
     }
-    public String getMonth(){
+    public String getCurrentMonth(){
         return LocalDate.now().getMonth().name();
     }
     public int getMonthInteger(){
         return LocalDate.now().getMonth().getValue();
     }
-    public int getYear(){
+    public int getCurrentYear(){
         return LocalDate.now().getYear();
     }
+
 }

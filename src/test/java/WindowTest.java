@@ -1,5 +1,5 @@
-import jadt.Core.Label;
-import jadt.Core.Window;
+import jadt.core.Label;
+import jadt.core.Window;
 
 public class WindowTest {
 

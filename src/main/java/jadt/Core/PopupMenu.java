@@ -1,7 +1,0 @@
-package jadt.Core;
-
-import javax.swing.*;
-
-public class PopupMenu {
-    JPopupMenu jPopupMenu = new JPopupMenu();
-}
