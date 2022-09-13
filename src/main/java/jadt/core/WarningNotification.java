@@ -59,7 +59,7 @@ public class WarningNotification {
     {
         var WarningText = new JLabel(displayText);
         WarningText.setBounds(102, 17, 492, 113);
-        frame.getContentPane().add(WarningText);
+        frame.add(WarningText);
     }
     @SuppressWarnings("unused")
     public void SetIcon(String filePathWithName) {
@@ -83,12 +83,12 @@ public class WarningNotification {
         Image icon = Toolkit.getDefaultToolkit().getImage(pathOfFile);
         frame.setIconImage(icon);
         frame.setLocationRelativeTo(null);
-        frame.getContentPane().setLayout(null);
+        frame.setLayout(null);
         IconImage.setIcon(new ImageIcon(requireNonNull(WarningNotification.class.getResource(pathOfFile))));
         IconImage.setBounds(6, 23, 84, 92);
-        frame.getContentPane().add(IconImage);
+        frame.add(IconImage);
         ok.setBounds(0,0,580,165);
-        frame.getContentPane().add(ok);
+        frame.add(ok);
     }
     @SuppressWarnings("unused")
     public void setBackgroundColor(Color color)

@@ -26,7 +26,7 @@ public class SuccessNotification {
 	{
 		var successText = new JLabel(displayText);
 		successText.setBounds(102, 17, 492, 113);
-		frame.getContentPane().add(successText);
+		frame.add(successText);
 	}
 	public void SetIcon(String filePathWithName) {
 		IconImage.setIcon(new ImageIcon(Objects.requireNonNull(SuccessNotification.class.getResource(filePathWithName))));
@@ -47,12 +47,12 @@ public class SuccessNotification {
 		Image icon = Toolkit.getDefaultToolkit().getImage(pathOfFile);
 			frame.setIconImage(icon);
 			frame.setLocationRelativeTo(null);
-			frame.getContentPane().setLayout(null);		
+			frame.setLayout(null);
 			IconImage.setIcon(new ImageIcon(Objects.requireNonNull(SuccessNotification.class.getResource(pathOfFile))));
 			IconImage.setBounds(6, 23, 84, 92);
-			frame.getContentPane().add(IconImage);
+			frame.add(IconImage);
 			ok.setBounds(0,0,580,165);
-			frame.getContentPane().add(ok);
+			frame.add(ok);
 	}
 	public void setBackgroundColor(Color color)
 	{

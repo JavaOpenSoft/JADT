@@ -63,4 +63,7 @@ public class EditorPane {
     public short getPositionX() {
         return PositionX;
     }
+    public JEditorPane getComponent(){
+        return jeditorPane;
+    }
 }

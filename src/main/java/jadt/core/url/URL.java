@@ -1,4 +1,4 @@
-package jadt.core.URL;
+package jadt.core.url;
 import javax.swing.JLabel;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -15,6 +15,17 @@ public class URL{
     int PositionX;
     int PositionY;
     private final JLabel urlLabel = new JLabel();
+    public URL(){
+        try {
+            Desktop.getDesktop().browse(new URI(urlLabel.getText()));
+            setClickedColor();
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        } catch (URISyntaxException ex) {
+            throw new RuntimeException(ex);
+        }
+        setClickedColor();
+    }
     public URL(String url) {
         resetColor();
         urlLabel.setText(url);

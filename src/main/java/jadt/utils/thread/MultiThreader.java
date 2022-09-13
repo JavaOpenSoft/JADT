@@ -1,4 +1,4 @@
-package jadt.utils.Thread;
+package jadt.utils.thread;
 import java.util.ArrayList;
 
 public class MultiThreader {

@@ -27,7 +27,7 @@ public class ErrorNotification {
 	{
 		var ErrorText = new JLabel(displayText);
 		ErrorText.setBounds(102, 17, 492, 113);
-		frame.getContentPane().add(ErrorText);
+		frame.add(ErrorText);
 	}
 	public void SetIcon(String filePathWithName) {
 		IconImage.setIcon(new ImageIcon(ErrorNotification.class.getResource(filePathWithName)));
@@ -47,12 +47,12 @@ public class ErrorNotification {
 		Image icon = Toolkit.getDefaultToolkit().getImage(pathOfFile);
 		frame.setIconImage(icon);
 		frame.setLocationRelativeTo(null);
-		frame.getContentPane().setLayout(null);
+		frame.setLayout(null);
 		IconImage.setIcon(new ImageIcon(Objects.requireNonNull(ErrorNotification.class.getResource(pathOfFile))));
 		IconImage.setBounds(6, 23, 84, 92);
-		frame.getContentPane().add(IconImage);
+		frame.add(IconImage);
 		ok.setBounds(0,0,580,165);
-		frame.getContentPane().add(ok);
+		frame.add(ok);
 	}
 	public void setBackgroundColor(Color color)
 	{

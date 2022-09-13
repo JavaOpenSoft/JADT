@@ -1,4 +1,4 @@
-package jadt.utils.Terminal;
+package jadt.templates.terminal;
 
 
 import java.awt.*;

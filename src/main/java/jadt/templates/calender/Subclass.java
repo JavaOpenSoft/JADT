@@ -1,4 +1,4 @@
-package jadt.utils.Calender;
+package jadt.templates.calender;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;

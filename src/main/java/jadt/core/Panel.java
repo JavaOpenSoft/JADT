@@ -2,22 +2,22 @@ package jadt.core;
 
 import jadt.layouts.*;
 import jadt.layouts.GridBagLayout;
-import jadt.utils.Clock.Clock;
-import juit.Layouts.*;
+import jadt.templates.clock.Clock;
 
 import javax.swing.*;
 import java.awt.*;
 import java.security.InvalidParameterException;
 
 public class Panel {
-    JPanel jPanel = new JPanel();
+    private JPanel jPanel = new JPanel();
+    public JPanel getComponent() { return jPanel; }
 
     public void add(Button button) {
         jPanel.add(button.getButton());
     }
 
     public void add(Label label) {
-        jPanel.add(label.label);
+        jPanel.add(label.getComponent());
     }
 
     public void add(Clock clock) {
@@ -30,15 +30,15 @@ public class Panel {
     }
 
     public void add(CheckBox checkBox) {
-        jPanel.add(checkBox.jCheckBox);
+        jPanel.add(checkBox.getComponent());
     }
 
     public void add(MenuBar menuBar) {
-        jPanel.add(menuBar.menuBar);
+        jPanel.add(menuBar.getComponent());
     }
 
     public void add(PasswordField passwordField) {
-        jPanel.add(passwordField.jPasswordField);
+        jPanel.add(passwordField.getComponent());
     }
 
     public void add(Slider slider) {
@@ -86,4 +86,5 @@ public class Panel {
     public void setLayout(jadt.layouts.SpringLayout springLayouts) {
         jPanel.setLayout(springLayouts.getLayout());
     }
+
 }

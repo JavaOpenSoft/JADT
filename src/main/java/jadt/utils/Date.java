@@ -1,6 +1,6 @@
 package jadt.utils;
 
-import jadt.utils.Clock.Time;
+import jadt.templates.clock.Time;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;

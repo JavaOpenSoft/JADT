@@ -1,4 +1,4 @@
-package jadt.utils.Clock;
+package jadt.templates.clock;
 
 import javax.swing.JLabel;
 import javax.swing.JFrame;

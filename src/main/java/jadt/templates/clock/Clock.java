@@ -1,4 +1,4 @@
-package jadt.utils.Clock;
+package jadt.templates.clock;
 
 
 import java.awt.Component;

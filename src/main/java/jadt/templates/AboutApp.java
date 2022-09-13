@@ -24,7 +24,7 @@ public class AboutApp {
         JFrame frame = new JFrame();
         frame.setBounds(100, 100, 450, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().setLayout(null);
+        frame.setLayout(null);
         frame.setTitle("About");
         String pathOfFile = "jui/img/Unknown.jpeg";
         Image icon = Toolkit.getDefaultToolkit().getImage(pathOfFile);
@@ -32,16 +32,16 @@ public class AboutApp {
 
         IconImage.setBounds(165, 6, 115, 133);
         IconImage.setIcon(new ImageIcon(Objects.requireNonNull(AboutApp.class.getResource("/jui/img/db877c2e-4f32-43bf-8454-7d34afd48786 (1).png"))));
-        frame.getContentPane().add(IconImage);
+        frame.add(IconImage);
         VersionNumber.setBounds(162, 194, 106, 16);
-        frame.getContentPane().add(VersionNumber);
+        frame.add(VersionNumber);
 
 
         AuthorLabel.setBounds(126, 222, 184, 16);
-        frame.getContentPane().add(AuthorLabel);
+        frame.add(AuthorLabel);
         CopyrightLabel.setFont(new Font("SansSerif", Font.PLAIN, 13));
         CopyrightLabel.setBounds(26, 250, 396, 16);
-        frame.getContentPane().add(CopyrightLabel);
+        frame.add(CopyrightLabel);
     }
     public void setAuthorText(String Text)
     {

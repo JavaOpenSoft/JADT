@@ -22,7 +22,7 @@ public class QuestionNotification {
     {
         var QuestionText = new JLabel(displayText);
         QuestionText.setBounds(102, 17, 492, 113);
-        frame.getContentPane().add(QuestionText);
+        frame.add(QuestionText);
     }
     public void SetIcon(String filePathWithName) {
         IconImage.setIcon(new ImageIcon(Objects.requireNonNull(QuestionNotification.class.getResource(filePathWithName))));
@@ -43,12 +43,12 @@ public class QuestionNotification {
         Image icon = Toolkit.getDefaultToolkit().getImage(pathOfFile);
         frame.setIconImage(icon);
         frame.setLocationRelativeTo(null);
-        frame.getContentPane().setLayout(null);
+        frame.setLayout(null);
         IconImage.setIcon(new ImageIcon(Objects.requireNonNull(QuestionNotification.class.getResource(pathOfFile))));
         IconImage.setBounds(6, 23, 84, 92);
-        frame.getContentPane().add(IconImage);
+        frame.add(IconImage);
         yes.setBounds(0,0,580,165);
-        frame.getContentPane().add(yes);
+        frame.add(yes);
     }
     public void setBackgroundColor(Color color)
     {

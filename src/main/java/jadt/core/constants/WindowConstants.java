@@ -1,4 +1,4 @@
-package jadt.core.Constants;
+package jadt.core.constants;
 
 import javax.swing.*;
 

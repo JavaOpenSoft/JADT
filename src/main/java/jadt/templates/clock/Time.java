@@ -1,4 +1,4 @@
-package jadt.utils.Clock;
+package jadt.templates.clock;
 
 public class Time extends java.util.Date{
     public String getCurrentTime()

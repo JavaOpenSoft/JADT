@@ -1,4 +1,4 @@
-package jadt.utils.Calender;
+package jadt.templates.calender;
 import jadt.layouts.FlowLayout;
 import jadt.core.Window;
 
@@ -17,15 +17,15 @@ public class Calender {
 
         window.setTitle("Calendar");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.getWindow().addWindowListener(new WindowAdapter() {
+        window.getComponent().addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent event) {
-                removeCalendar(window.getWindow());
+                removeCalendar(window.getComponent());
             }
         });
 
         window.setLayout(new FlowLayout());
-        window.getWindow().add(panel);
-        window.getWindow().pack();
+        window.getComponent().add(panel);
+        window.getComponent().pack();
         // frame.setBounds(100, 100, 400, 200);
         window.showWindow();
     }

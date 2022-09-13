@@ -50,7 +50,7 @@ public class Menu {
     }
     public void add(CheckboxMenuItem checkboxMenuItem)
     {
-        menu.add(checkboxMenuItem.jCheckBoxMenuItem);
+        menu.add(checkboxMenuItem.getComponent());
     }
     public void add(Menu menu){
         this.menu.add(menu.getComponent());

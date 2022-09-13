@@ -14,11 +14,11 @@ public class MenuItem {
         setText(Text);
     }
     public void add(RadioButtonMenuItem radioButtonMenuItem){
-        menuItem.add(radioButtonMenuItem.jRadioButtonMenuItem);
+        menuItem.add(radioButtonMenuItem.getComponent());
     }
     public void add(CheckboxMenuItem checkboxMenuItem)
     {
-        menuItem.add(checkboxMenuItem.jCheckBoxMenuItem);
+        menuItem.add(checkboxMenuItem.getComponent());
     }
     public void setFont(String FontName,String FontType,short size)
     {

@@ -3,7 +3,7 @@ package jadt.core;
 import javax.swing.*;
 
 public class Spinner {
-    public  JSpinner jSpinner;
+    private JSpinner jSpinner;
     public Spinner(int initValue, int minimum,int maximum,int interval){
         SpinnerModel value = new SpinnerNumberModel(initValue, minimum, maximum, interval);
         JSpinner jSpinner = new JSpinner();

@@ -3,19 +3,19 @@ package jadt.core;
 import javax.swing.*;
 
 public class MenuBar {
-    private final JMenuBar menuBar = new JMenuBar();
+    private JMenuBar menuBar = new JMenuBar();
     private int PositionX;
     private int PositionY;
     private int SizeX;
     private int SizeY;
 
     public void add(Menu menu){
-        menuBar.add(menu.menu);
+        menuBar.add(menu.getComponent());
     }
 
     public void remove(Menu menu)
     {
-        menuBar.remove(menu.menu);
+        menuBar.remove(menu.getComponent());
     }
     public void setSize(int SizeX, int SizeY)
     {
@@ -35,5 +35,8 @@ public class MenuBar {
         this.PositionY = PositionY;
         this.SizeX = SizeX;
         this.SizeY = SizeY;
+    }
+    public JMenuBar getComponent(){
+        return menuBar;
     }
 }

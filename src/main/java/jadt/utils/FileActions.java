@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -53,13 +52,13 @@ public class FileActions {
         }
         return contents.toArray(str);
     }
-    public void deleteFile(File file) throws IOException{
+    public void deleteFile(File file){
         boolean temp = file.delete();
     }
-    public boolean doesExist(File file) throws IOException{
+    public boolean doesExist(File file){
         return file.exists();
     }
-    public void renameFile(File file, String name) throws IOException{
+    public void renameFile(File file, String name){
         boolean temp = file.renameTo(new File(name));
     }
 

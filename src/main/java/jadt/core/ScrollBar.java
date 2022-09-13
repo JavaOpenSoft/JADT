@@ -3,20 +3,27 @@ import javax.swing.*;
 import java.security.InvalidParameterException;
 
 public class ScrollBar {
-    JScrollPane scrollPane;
-    JScrollBar jScrollBar= new JScrollBar();
-    JScrollBar BottomScrollBar = new JScrollBar();
+    public static final byte VERTICAL = 0;
+    public static final byte HORIZONTAL = 1;
+    private JScrollPane scrollPane;
+    private JScrollBar HorizontalScrollBar = new JScrollBar();
+    private JScrollBar BottomScrollBar = new JScrollBar();
+    private int SizeX;
+    private int SizeY;
+    private int PositionX;
+    private int PositionY;
+
     public void setPosition(String Position)
     {
-        jScrollBar = scrollPane.getVerticalScrollBar();
+        HorizontalScrollBar = scrollPane.getVerticalScrollBar();
         BottomScrollBar = scrollPane.createHorizontalScrollBar();
-        jScrollBar.setValue(jScrollBar.getMinimum());
+        HorizontalScrollBar.setValue(HorizontalScrollBar.getMinimum());
         BottomScrollBar.setValue(BottomScrollBar.getMinimum());
-        if (Position.equals("VERTICAL")) jScrollBar.setVisible(true);
+        if (Position.equals("VERTICAL")) HorizontalScrollBar.setVisible(true);
         if(Position.equals("HORIZONTAL"))BottomScrollBar.setVisible(true);
         if (Position.equals("VERTICAL AND HORIZONTAL"))
         {
-            jScrollBar.setVisible(true);
+            HorizontalScrollBar.setVisible(true);
             BottomScrollBar.setVisible(true);
         }
         else throw new InvalidParameterException("The setPosition() function parameter must give either " +
@@ -24,9 +31,35 @@ public class ScrollBar {
     }
     public void setSize(int SizeX, int SizeY,String Type)
     {
-        if (Type.equals("VERTICAL")) jScrollBar.setSize(SizeX,SizeY);
+        if (Type.equals("VERTICAL")) HorizontalScrollBar.setSize(SizeX,SizeY);
         else  if(Type.equals("HORIZONTAL"))BottomScrollBar.setSize(SizeX,SizeY);
         else throw new InvalidParameterException("The setSize() function 'Type' parameter must give either " +
                     "'HORIZONTAL' OR 'VERTICAL");
+    }
+    public void setPosition(int PositionX,int PositionY) {
+        HorizontalScrollBar.setBounds(PositionX,PositionY,SizeX,SizeY);
+        BottomScrollBar.setBounds(PositionX,PositionY,SizeX,SizeY);
+    }
+    public void setBounds(int SizeX,int SizeY,int PositionX,int PositionY) {
+        HorizontalScrollBar.setBounds(PositionX,PositionY,SizeX,SizeY);
+        BottomScrollBar.setBounds(PositionX,PositionY,SizeX,SizeY);
+    }
+    public void showHorizontalScrollBar(){
+        HorizontalScrollBar.setVisible(true);
+    }
+    public void showVerticalScrollBar(){
+        BottomScrollBar.setVisible(true);
+    }
+    public void hideHorizontalScrollBar(){
+        HorizontalScrollBar.setVisible(false);
+    }
+    public void hideVerticalScrollBar(){
+        BottomScrollBar.setVisible(false);
+    }
+    public JScrollBar getComponent(byte type){
+        JScrollBar scrollBar = null;
+        if(type == ScrollBar.VERTICAL)scrollBar = BottomScrollBar;
+        else if (type == ScrollBar.HORIZONTAL)scrollBar = HorizontalScrollBar;
+        return scrollBar;
     }
 }

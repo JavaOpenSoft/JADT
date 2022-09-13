@@ -1,4 +1,4 @@
-package jadt.utils.Thread;
+package jadt.utils.thread;
 
 public abstract class ThreadTask extends Thread {
     @Override

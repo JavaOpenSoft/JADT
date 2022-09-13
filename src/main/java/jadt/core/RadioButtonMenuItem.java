@@ -3,7 +3,7 @@ package jadt.core;
 import javax.swing.*;
 
 public class RadioButtonMenuItem {
-    JRadioButtonMenuItem jRadioButtonMenuItem = new JRadioButtonMenuItem();
+    private JRadioButtonMenuItem jRadioButtonMenuItem = new JRadioButtonMenuItem();
     String Text;
     public RadioButtonMenuItem(String Text)
     {
@@ -13,6 +13,9 @@ public class RadioButtonMenuItem {
     {
         jRadioButtonMenuItem.setText(Text);
         this.Text = Text;
+    }
+    public JRadioButtonMenuItem getComponent(){
+        return jRadioButtonMenuItem;
     }
 
 }

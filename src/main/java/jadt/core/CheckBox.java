@@ -41,7 +41,7 @@ public class CheckBox {
         jCheckBox.setForeground(new jadt.graphics.Color(50,100,250));
         jCheckBox.setIcon(icon);
     }
-    public JCheckBox getCheckBox() {
+    public JCheckBox getComponent() {
         return jCheckBox;
     }
 

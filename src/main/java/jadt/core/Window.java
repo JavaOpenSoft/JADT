@@ -1,11 +1,10 @@
 package jadt.core;
 
-import jadt.core.Constants.WindowConstants;
-import jadt.core.URL.URL;
+import jadt.core.constants.WindowConstants;
+import jadt.core.url.URL;
 import jadt.layouts.*;
 import jadt.layouts.GridBagLayout;
-import jadt.utils.Clock.Clock;
-import juit.Layouts.*;
+import jadt.templates.clock.Clock;
 
 import javax.swing.*;
 import java.awt.*;
@@ -77,7 +76,7 @@ public class Window implements WindowConstants {
         this.PositionY = PositionY;
         this.Title = Title;
     }
-    public JFrame getWindow() {
+    public JFrame getComponent() {
         return window;
     }
     public void setCloseOperation(int WindowNumber)
@@ -105,23 +104,23 @@ public class Window implements WindowConstants {
     }
     public void add(Spinner spinner)
     {
-        window.add(spinner.jSpinner);
+        window.add(spinner.getComponent());
     }
     public void add(CheckBox checkBox)
     {
-        window.add(checkBox.getCheckBox());
+        window.add(checkBox.getComponent());
     }
     public void add(MenuBar menuBar)
     {
-        window.add(menuBar.menuBar);
+        window.add(menuBar.getComponent());
     }
     public void add(PasswordField passwordField)
     {
-        window.add(passwordField.jPasswordField);
+        window.add(passwordField.getComponent());
     }
     public void add(Slider slider)
     {
-        window.add(slider.jSlider);
+        window.add(slider.getComponent());
     }
     public void add(TextField textField)
     {
@@ -129,13 +128,26 @@ public class Window implements WindowConstants {
     }
     public void add(ToggleSwitch toggleSwitch)
     {
-        window.add(toggleSwitch.jToggleButton);
+        window.add(toggleSwitch.getComponent());
     }
     public void add(Panel panel)
     {
-        window.add(panel.jPanel);
+        window.add(panel.getComponent());
     }
     public void add(URL url){window.add(url.getComponent());}
+    public void add(EditorPane editorPane){window.add(editorPane.getComponent());}
+    public void add(ExpandableButton expandableButton){window.add(expandableButton.getComponent());}
+    public void add(FormattedTextField formattedTextField){window.add(formattedTextField.getComponent());}
+    public void add(ImageFrame imageFrame){window.add(imageFrame.getComponent());}
+    public void add(PopupMenu popupMenu){window.add(popupMenu.getComponent());}
+    public void add(ProgressBar progressBar){window.add(progressBar.getComponent());}
+    public void add(RadioButton radioButton){window.add(radioButton.getComponent());}
+    public void add(ScrollPane scrollPane){window.add(scrollPane.getComponent());}
+    public void add(ScrollBar scrollBar, byte Type){window.add(scrollBar.getComponent(Type));}
+    public void add(Separator seperator){window.add(seperator.getComponent());}
+    public void add(TabbedPane tabbedPane){window.add(tabbedPane.getComponent());}
+    public void add(TextArea textArea){window.add(textArea.getComponent());}
+    public void add(TextPane textPane){window.add(textPane.getComponent());}
     public void setLayout(jadt.layouts.FlowLayout flowLayout)
     {
         window.setLayout(flowLayout.getLayout());

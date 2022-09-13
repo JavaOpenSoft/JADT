@@ -1,4 +1,4 @@
-package jadt.utils.Clock;
+package jadt.templates.clock;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -197,13 +197,13 @@ class AnalogClock extends JFrame implements MouseListener{
     public void mouseClicked(MouseEvent arg0) {
         if(status==0){
             status =1;
-            frame.getContentPane().setBackground(Color.LIGHT_GRAY);
+            frame.setBackground(Color.LIGHT_GRAY);
         }else if(status ==1){
             status=2;
-            frame.getContentPane().setBackground(Color.BLACK);
+            frame.setBackground(Color.BLACK);
         }else{
             status =0;
-            frame.getContentPane().setBackground(new Color(212, 234, 255));
+            frame.setBackground(new Color(212, 234, 255));
         }
         repaint();
     }

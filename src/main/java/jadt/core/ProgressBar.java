@@ -58,4 +58,7 @@ public class ProgressBar{
         }
 
     }
+    public JProgressBar getComponent(){
+        return progressBar;
+    }
 }

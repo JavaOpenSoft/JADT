@@ -3,7 +3,7 @@ package jadt.core;
 import javax.swing.*;
 
 public class Separator {
-    JSeparator jSeparator = new JSeparator();
+    private JSeparator jSeparator = new JSeparator();
     int SizeX,SizeY,PositionX,PositionY;
 
     public int getSizeX() {
@@ -32,7 +32,7 @@ public class Separator {
     {
         jSeparator.setBounds(PositionX,PositionY,SizeX,SizeY);
     }
-    public JSeparator getSeperator()
+    public JSeparator getComponent()
     {
         return jSeparator;
     }
