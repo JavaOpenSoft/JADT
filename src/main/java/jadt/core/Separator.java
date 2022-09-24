@@ -1,39 +1,49 @@
 package jadt.core;
 
 import javax.swing.*;
+import java.beans.PropertyChangeListener;
 
-public class Separator {
-    private JSeparator jSeparator = new JSeparator();
-    int SizeX,SizeY,PositionX,PositionY;
-
+public class Separator extends AppComponent implements SwingConstants{
+    private JSeparator separator = new JSeparator();
+    int sizeX,sizeY,positionX,positionY;
+    public void setOrientation(int Orientation){
+        separator.setOrientation(Orientation);
+    }
+    public void setBounds(int sizeX,int sizeY, int positionX, int positionY){
+        separator.setBounds(sizeX,sizeY,positionX,positionY);
+    }
+    @Override
     public int getSizeX() {
-        return SizeX;
+        return sizeX;
     }
 
     public int getSizeY() {
-        return SizeY;
+        return sizeY;
     }
 
     public int getPositionX() {
-        return PositionX;
+        return positionX;
     }
 
     public int getPositionY() {
-        return PositionY;
+        return positionY;
     }
 
-    public void setSize(int SizeX, int SizeY)
+    public void setSize(int sizeX, int sizeY)
     {
-        jSeparator.setSize(SizeX,SizeY);
-        this.SizeX = SizeX;
-        this.SizeY = SizeY;
+        separator.setSize(sizeX,sizeY);
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
     }
-    public void setPosition(int PositionX,int PositionY)
+    public void setPosition(int positionX,int positionY)
     {
-        jSeparator.setBounds(PositionX,PositionY,SizeX,SizeY);
+        separator.setBounds(positionX,positionY,sizeX,sizeY);
     }
     public JSeparator getComponent()
     {
-        return jSeparator;
+        return separator;
+    }
+    public void addPropertyChangeListener(PropertyChangeListener listener){
+        separator.addPropertyChangeListener(listener);
     }
 }

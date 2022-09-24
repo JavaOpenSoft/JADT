@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JADT:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JADT_jar</output-path>
+    <root id="archive" name="JADT.jar">
+      <element id="module-output" name="JADT" />
+    </root>
+  </artifact>
+</component>

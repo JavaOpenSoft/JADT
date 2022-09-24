@@ -10,32 +10,32 @@ import java.awt.Image;
 
 public class ImageFrame {
     private JLabel imageFrame = new JLabel();
-    private int SizeX,SizeY,PositionX,PositionY;
-    private Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
-    private final int posx = size.width;
-    private final int posy = size.height;
+    private int sizeX,sizeY,positionX,positionY;
+    private final Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
+    private final int posX = size.width;
+    private final int posY = size.height;
     public void setLocationOnScreen(Window frame, String Location)
     {
         JLabel temp = new JLabel();
         if(Location.equals("CENTRE"))frame.getComponent().setLocationRelativeTo(null);
         if(Location.equals("LEFT_CENTRE")){
-            temp.setBounds(0,posy/2,0,0);
+            temp.setBounds(0, posY /2,0,0);
             frame.getComponent().setLocationRelativeTo(temp);
         }
         if(Location.equals("RIGHT_CENTRE")){
-            temp.setBounds(posx,posy/2,0,0);
+            temp.setBounds(posX, posY /2,0,0);
             frame.getComponent().setLocationRelativeTo(temp);
         }
         if(Location.equals("DOWN_CENTRE")){
-            temp.setBounds(posx/2,posy,0,0);
+            temp.setBounds(posX /2, posY,0,0);
             frame.getComponent().setLocationRelativeTo(temp);
         }
         if(Location.equals("UP_CENTRE")){
-            temp.setBounds(posx,0,0,0);
+            temp.setBounds(posX,0,0,0);
             frame.getComponent().setLocationRelativeTo(temp);
         }
         if(Location.equals("RIGHT_DOWN_CORNER")){
-            temp.setBounds(0,posy,0,0);
+            temp.setBounds(0, posY,0,0);
             frame.getComponent().setLocationRelativeTo(temp);
         }
         if(Location.equals("RIGHT_UP_CORNER")){
@@ -43,20 +43,20 @@ public class ImageFrame {
             frame.getComponent().setLocationRelativeTo(temp);
         }
         if(Location.equals("LEFT_UP_CORNER")){
-            temp.setBounds(posx,posy/2,0,0);
+            temp.setBounds(posX, posY /2,0,0);
             frame.getComponent().setLocationRelativeTo(temp);
         }
         if(Location.equals("LEFT_DOWN_CORNER")){
-            temp.setBounds(posx,posy,0,0);
+            temp.setBounds(posX, posY,0,0);
             frame.getComponent().setLocationRelativeTo(temp);
         }
     }
-    public void setPositionAndSize(int PositionX, int PositionY,int SizeX,int SizeY) {
-        imageFrame.setBounds(PositionX,PositionY,SizeX,SizeY);
-        this.PositionX = PositionX;
-        this.PositionY = PositionY;
-        this.SizeX = SizeX;
-        this.SizeY = SizeY;
+    public void setPositionAndSize(int positionX, int positionY,int sizeX,int sizeY) {
+        imageFrame.setBounds(positionX,positionY,sizeX,sizeY);
+        this.positionX = positionX;
+        this.positionY = positionY;
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
     }
     public void setImage(String filePathWithName)
     {
@@ -68,59 +68,59 @@ public class ImageFrame {
         imageFrame.setIcon(new ImageIcon(image));
         imageFrame.setVisible(true);
     }
-    public void setSize(int SizeX, int SizeY){
-        imageFrame.setSize(SizeX,SizeY);
-        this.SizeX = SizeX;
-        this.SizeY = SizeY;
+    public void setSize(int sizeX, int sizeY){
+        imageFrame.setSize(sizeX,sizeY);
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
     }
-    public void setPosition(int PositionX, int PositionY){
-        imageFrame.setBounds(PositionX,PositionY,getSizeX(),getSizeY());
-        this.PositionX = PositionX;
-        this.PositionY = PositionY;
+    public void setPosition(int positionX, int positionY){
+        imageFrame.setBounds(positionX,positionY,getSizeX(),getSizeY());
+        this.positionX = positionX;
+        this.positionY = positionY;
     }
     public ImageFrame(Image image)
     {
         setImage(image);
     }
-    public ImageFrame(String filePathWithName, int SizeX, int SizeY,int PositionX,int PositionY)
+    public ImageFrame(String filePathWithName, int SizeX, int sizeY,int PositionX,int PositionY)
     {
         setImage(filePathWithName);
         setPosition(PositionX,PositionY);
-        setSize(SizeX,SizeY);
+        setSize(SizeX,sizeY);
     }
     public ImageFrame(String filePathWithName)
     {
         setImage(filePathWithName);
     }
-    public ImageFrame(String filePathWithName, int SizeX, int SizeY)
+    public ImageFrame(String filePathWithName, int SizeX, int sizeY)
     {
         setImage(filePathWithName);
-        setSize(SizeX,SizeY);
+        setSize(SizeX,sizeY);
     }
-    public ImageFrame(String filePathWithName,short PositionX,short PositionY)
+    public ImageFrame(String filePathWithName,short positionX,short positionY)
     {
         setImage(filePathWithName);
-        setPosition(PositionX,PositionY);
+        setPosition(positionX,positionY);
     }
     public JLabel getImageFrame() {
         return imageFrame;
     }
 
     public int getSizeX() {
-        return SizeX;
+        return sizeX;
     }
 
 
     public int getSizeY() {
-        return SizeY;
+        return sizeY;
     }
 
     public int getPositionX() {
-        return PositionX;
+        return positionX;
     }
 
     public int getPositionY() {
-        return PositionY;
+        return positionY;
     }
     public JLabel getComponent(){
         return imageFrame;

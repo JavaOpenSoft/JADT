@@ -5,28 +5,28 @@ import java.awt.Font;
 import javax.swing.Icon;
 
 public class Label {
-    int PositionX = 0;
-    int PositionY = 0;
-    int SizeX = 100;
-    int SizeY = 100;
+    int positionX = 0;
+    int positionY = 0;
+    int sizeX = 100;
+    int sizeY = 100;
     private final JLabel label = new JLabel();
     private String FontName;
     private String FontType;
     private short size;
 
-    public Label(String Text, int SizeX, int SizeY)
+    public Label(String Text, int sizeX, int sizeY)
     {
         label.setText(Text);
-        label.setSize(SizeX,SizeY);
+        label.setSize(sizeX,sizeY);
     }
-    public Label(String Text, int SizeX, int SizeY,int PositionX,int PositionY)
+    public Label(String Text, int sizeX, int sizeY,int positionX,int positionY)
     {
         label.setText(Text);
-        label.setBounds(PositionX,PositionY,SizeX,SizeY);
-        this.PositionX = PositionX;
-        this.PositionY = PositionY;
-        this.SizeX = SizeX;
-        this.SizeY = SizeY;
+        label.setBounds(positionX,positionY,sizeX,sizeY);
+        this.positionX = positionX;
+        this.positionY = positionY;
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
     }
     public Label(String Text, Icon icon){
         label.setText(Text);
@@ -43,22 +43,22 @@ public class Label {
     public JLabel getComponent()
     {return label;}
     public int GetPositionX()
-    {return PositionX;}
+    {return positionX;}
     public int GetPositionY()
     {
-        return PositionY;
+        return positionY;
     }
     public int getSizeX()
     {
-        return SizeX;
+        return sizeX;
     }
     public int getSizeY()
     {
-        return SizeY;
+        return sizeY;
     }
-    public void SetPosition(int PositionX,int PositionY)
+    public void SetPosition(int positionX,int positionY)
     {
-        label.setBounds(this.SizeX,this.SizeY,PositionX,PositionY);
+        label.setBounds(this.sizeX,this.sizeY,positionX,positionY);
     }
     public String getText()
     {
@@ -77,10 +77,10 @@ public class Label {
     {
         return this.FontName;
     }
-    public void setSize(int SizeX, int SizeY){
-        label.setSize(SizeX, SizeY);
-        this.SizeX = SizeX;
-        this.SizeY = SizeY;
+    public void setSize(int SizeX, int sizeY){
+        label.setSize(SizeX, sizeY);
+        this.sizeX = SizeX;
+        this.sizeY = sizeY;
     }
     public String getFontType()
     {

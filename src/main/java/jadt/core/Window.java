@@ -13,10 +13,10 @@ import java.security.InvalidParameterException;
 public class Window implements WindowConstants {
     private static final JFrame window = new JFrame();
     private final Dimension size = Toolkit.getDefaultToolkit ().getScreenSize();
-    private int PositionX = size.width;
-    private int PositionY = size.height;
-    private int SizeX;
-    private int SizeY;
+    private int positionX = size.width;
+    private int positionY = size.height;
+    private int sizeX;
+    private int sizeY;
     private String Title;
     private boolean isVisible;
 
@@ -42,38 +42,38 @@ public class Window implements WindowConstants {
 
     }
 
-    private void setPosition(int PositionX, int PositionY) {
-        window.setBounds(PositionX,PositionY,SizeX,SizeY);
-        this.PositionX = PositionX;
-        this.PositionY = PositionY;
+    private void setPosition(int positionX, int positionY) {
+        window.setBounds(positionX,positionY,sizeX,sizeY);
+        this.positionX = positionX;
+        this.positionY = positionY;
     }
 
-    public int getPositionX() {
-        return PositionX;
+    public int getpositionX() {
+        return positionX;
     }
 
-    public int getPositionY() {
-        return PositionY;
+    public int getpositionY() {
+        return positionY;
     }
 
-    public Window(String Title, int SizeX, int SizeY)
+    public Window(String Title, int sizeX, int sizeY)
     {
         window.setTitle(Title);
         window.setVisible(true);
-        window.setSize(SizeX,SizeY);
-        this.SizeX = SizeX;
-        this.SizeY = SizeY;
+        window.setSize(sizeX,sizeY);
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
         this.Title = Title;
     }
-    public Window(String Title, int SizeX, int SizeY, int PositionX, int PositionY)
+    public Window(String Title, int sizeX, int sizeY, int positionX, int positionY)
     {
         window.setTitle(Title);
         window.setVisible(true);
-        window.setBounds(PositionX,PositionY,SizeX,SizeY);
-        this.SizeX = SizeX;
-        this.SizeY = SizeY;
-        this.PositionX = PositionX;
-        this.PositionY = PositionY;
+        window.setBounds(positionX,positionY,sizeX,sizeY);
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
+        this.positionX = positionX;
+        this.positionY = positionY;
         this.Title = Title;
     }
     public JFrame getComponent() {
@@ -87,8 +87,8 @@ public class Window implements WindowConstants {
         if(WindowNumber == Window.exitOnClose) window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    public int GetSizeX(){return SizeX;}
-    public int GetSizeY() {return SizeY;}
+    public int getSizeX(){return sizeX;}
+    public int getSizeY() {return sizeY;}
     public void add(Button button)
     {
         window.add(button.getButton());
@@ -156,7 +156,7 @@ public class Window implements WindowConstants {
     {
         window.setLayout((LayoutManager) freeFormLayout.getLayout());
     }
-    public void setLayout(BoxLayouts boxLayouts, Container pane, int AXIS)
+    public void setLayout(BoxLayouts boxLayouts, AppComponent pane, int AXIS)
     {
         window.setLayout(boxLayouts.getBoxLayout(pane,AXIS));
         if(AXIS != BoxLayouts.X_AXIS &&AXIS != BoxLayouts.Y_AXIS) throw new InvalidParameterException("setLayout()" +
@@ -187,23 +187,23 @@ public class Window implements WindowConstants {
         JLabel temp = new JLabel();
         if(location == Window.centre)window.setLocationRelativeTo(null);
         else if(location== Window.leftCentre){
-            temp.setBounds(0, PositionY /2,0,0);
+            temp.setBounds(0, positionY /2,0,0);
             window.setLocationRelativeTo(temp);
         }
         else if(location==Window.rightCentre){
-            temp.setBounds(PositionX, PositionY /2,0,0);
+            temp.setBounds(positionX, positionY /2,0,0);
             window.setLocationRelativeTo(temp);
         }
         else if(location == Window.downCentre){
-            temp.setBounds(PositionX/2, PositionY,0,0);
+            temp.setBounds(positionX/2, positionY,0,0);
             window.setLocationRelativeTo(temp);
         }
         else if(location == Window.upCentre){
-            temp.setBounds(PositionX,0,0,0);
+            temp.setBounds(positionX,0,0,0);
             window.setLocationRelativeTo(temp);
         }
         else if(location ==Window.rightDownCorner){
-            temp.setBounds(0, PositionY,0,0);
+            temp.setBounds(0, positionY,0,0);
             window.setLocationRelativeTo(temp);
         }
         else if(location == Window.rightUpCorner){
@@ -211,11 +211,11 @@ public class Window implements WindowConstants {
             window.setLocationRelativeTo(temp);
         }
         else if(location == Window.leftUpCorner){
-            temp.setBounds(PositionX, PositionY /2,0,0);
+            temp.setBounds(positionX, positionY /2,0,0);
             window.setLocationRelativeTo(temp);
         }
         else if(location == Window.leftDownCorner){
-            temp.setBounds(PositionX, PositionY,0,0);
+            temp.setBounds(positionX, positionY,0,0);
             window.setLocationRelativeTo(temp);
         }
 

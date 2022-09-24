@@ -5,7 +5,7 @@ import javax.swing.*;
 
 public class RadioButton {
     private JRadioButton jRadioButton = new JRadioButton();
-    int SizeX,SizeY,PositionX,PositionY;
+    int sizeX,sizeY,positionX,positionY;
     private String Text;
     public boolean isSelected()
     {
@@ -16,35 +16,35 @@ public class RadioButton {
         jRadioButton.setText(Text);
         this.Text = Text;
     }
-    public void setSize(int SizeX, int SizeY)
+    public void setSize(int sizeX, int sizeY)
     {
-        jRadioButton.setSize(SizeX,SizeY);
-        this.SizeX = SizeX;
-        this.SizeY = SizeY;
+        jRadioButton.setSize(sizeX,sizeY);
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
     }
-    public void setPosition(int PositionX,int PositionY)
+    public void setPosition(int positionX,int positionY)
     {
-        jRadioButton.setBounds(PositionX,PositionY,SizeX,SizeY);
-        this.PositionX = PositionX;
-        this.PositionY = PositionY;
+        jRadioButton.setBounds(positionX,positionY,sizeX,sizeY);
+        this.positionX = positionX;
+        this.positionY = positionY;
     }
     public String getText()
     {
         return Text;
     }
     public int getSizeX(){
-        return SizeX;
+        return sizeX;
     }
     public int getSizeY()
     {
-        return  SizeY;
+        return  sizeY;
     }
-    public int getPositionX(){
-        return PositionX;
+    public int getpositionX(){
+        return positionX;
     }
-    public int getPositionY()
+    public int getpositionY()
     {
-        return PositionY;
+        return positionY;
     }
     public JRadioButton getComponent() {
         return jRadioButton;

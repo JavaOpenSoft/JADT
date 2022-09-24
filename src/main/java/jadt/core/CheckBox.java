@@ -8,36 +8,36 @@ import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.IOException;
 
-public class CheckBox {
+public class CheckBox extends AppComponent {
     private final JCheckBox jCheckBox = new JCheckBox();
     private String FontName = "SansSerif";
     private short FontSize = 13;
     private String FontType = "Plain";
-    private final short  SizeX = 100;
-    private final short  SizeY = 30;
-    private final short PositionX = 0;
-    private final short PositionY = 0;
+    private final short  sizeX = 100;
+    private final short  sizeY = 30;
+    private final short positionX = 0;
+    private final short positionY = 0;
     public CheckBox(){
         jCheckBox.setFont(new Font(FontName, Font.PLAIN, FontSize));
-        jCheckBox.setBounds(PositionX,PositionY, SizeX, SizeY);
+        jCheckBox.setBounds(positionX,positionY, sizeX, sizeY);
         jCheckBox.setForeground(new java.awt.Color(50,100,250));
     }
     public CheckBox(String Text){
         jCheckBox.setText(Text);
         jCheckBox.setFont(new Font(FontName, Font.PLAIN, FontSize));
-        jCheckBox.setBounds(PositionX,PositionY, SizeX, SizeY);
+        jCheckBox.setBounds(positionX,positionY, sizeX, sizeY);
         jCheckBox.setForeground(new jadt.graphics.Color(50,100,250));
     }
     public CheckBox(Icon icon){
         jCheckBox.setFont(new Font(FontName, Font.PLAIN, FontSize));
-        jCheckBox.setBounds(PositionX,PositionY, SizeX, SizeY);
+        jCheckBox.setBounds(positionX,positionY, sizeX, sizeY);
         jCheckBox.setForeground(new jadt.graphics.Color(50,100,250));
         jCheckBox.setIcon(icon);
     }
     public CheckBox(String Text,Icon icon){
         jCheckBox.setText(Text);
         jCheckBox.setFont(new Font(FontName, Font.PLAIN, FontSize));
-        jCheckBox.setBounds(PositionX,PositionY, SizeX, SizeY);
+        jCheckBox.setBounds(positionX,positionY, sizeX, sizeY);
         jCheckBox.setForeground(new jadt.graphics.Color(50,100,250));
         jCheckBox.setIcon(icon);
     }

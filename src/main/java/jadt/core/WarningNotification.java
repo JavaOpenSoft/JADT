@@ -43,7 +43,7 @@ public class WarningNotification {
         return "WarningNotification{" +
                 "x=" + x +
                 ", y=" + y +
-                ", IMAGE_SIZEY=" + IMAGE_SIZEY +
+                ", IMAGE_sizeY=" + IMAGE_SIZEY +
                 ", IMAGE_SIZEX=" + IMAGE_SIZEX +
                 ", IconImage=" + "{" +IconImage.getIcon().getIconWidth() + "," + IconImage.getIcon().getIconHeight() + "}"+
                 ", frame=" + frame +

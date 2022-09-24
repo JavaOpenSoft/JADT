@@ -8,8 +8,8 @@ public class ErrorNotification {
 
 	private short x = 600;
 	private short y = 175;
-	final public int IMAGE_SIZEY =  92;
-	final public int IMAGE_SIZEX =  84;
+	final public int IMAGE_sizeY =  92;
+	final public int IMAGE_sizeX =  84;
 
 	JLabel IconImage = new JLabel("");
 	JFrame frame;

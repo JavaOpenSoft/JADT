@@ -1,5 +1,7 @@
 package jadt.core;
 
+import java.awt.*;
+
 public class Cursor extends java.awt.Cursor{
     public Cursor(int type) {
         super(type);
@@ -7,6 +9,10 @@ public class Cursor extends java.awt.Cursor{
 
     protected Cursor(String name) {
         super(name);
+    }
+    public Cursor(Image image) {
+        super(getDefaultCursor().getType());
+
     }
 
     public Cursor getHandCursor() {
@@ -51,5 +57,9 @@ public class Cursor extends java.awt.Cursor{
     public Cursor getMoveCursor() {
         return new Cursor(MOVE_CURSOR);
     }
-    public C
+    public java.awt.Cursor convertImageToCustomCursor(Image image, AppComponent appComponent){
+        java.awt.Cursor c = Toolkit.getDefaultToolkit().createCustomCursor(image , new Point(appComponent.getPositionX(),
+                appComponent.getPositionY()), "img");
+        return c;
+    }
 }

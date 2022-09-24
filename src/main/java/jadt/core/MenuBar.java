@@ -1,13 +1,13 @@
 package jadt.core;
 
 import javax.swing.*;
-
+@SuppressWarnings("all")
 public class MenuBar {
     private JMenuBar menuBar = new JMenuBar();
-    private int PositionX;
-    private int PositionY;
-    private int SizeX;
-    private int SizeY;
+    private int positionX;
+    private int positionY;
+    private int sizeX;
+    private int sizeY;
 
     public void add(Menu menu){
         menuBar.add(menu.getComponent());
@@ -17,24 +17,24 @@ public class MenuBar {
     {
         menuBar.remove(menu.getComponent());
     }
-    public void setSize(int SizeX, int SizeY)
+    public void setSize(int sizeX, int sizeY)
     {
-        menuBar.setSize(SizeX, SizeY);
-        this.SizeX = SizeX;
-        this.SizeY = SizeY;
+        menuBar.setSize(sizeX, sizeY);
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
     }
-    public void setPosition(int PositionX, int PositionY)
+    public void setPosition(int positionX, int positionY)
     {
-        menuBar.setBounds(PositionX, PositionY, SizeX, SizeY);
-        this.PositionX = PositionX;
-        this.PositionY = PositionY;
+        menuBar.setLocation(positionX, positionY);
+        this.positionX = positionX;
+        this.positionY = positionY;
     }
-    public void setBounds(int PositionX, int PositionY, int SizeX, int SizeY){
-        menuBar.setBounds(PositionX, PositionY, SizeX, SizeY);
-        this.PositionX = PositionX;
-        this.PositionY = PositionY;
-        this.SizeX = SizeX;
-        this.SizeY = SizeY;
+    public void setBounds(int positionX, int positionY, int sizeX, int sizeY){
+        menuBar.setBounds(positionX, positionY, sizeX, sizeY);
+        this.positionX = positionX;
+        this.positionY = positionY;
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
     }
     public JMenuBar getComponent(){
         return menuBar;

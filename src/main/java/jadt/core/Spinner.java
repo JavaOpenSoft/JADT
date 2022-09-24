@@ -10,34 +10,34 @@ public class Spinner {
     }
     int value,minimum,maximum,interval;
     int initValue;
-    int PositionX,PositionY,SizeX,SizeY;
+    int positionX,positionY,sizeX,sizeY;
 
     public int getPositionX() {
-        return PositionX;
+        return positionX;
     }
-    public  void setSize(int SizeX, int SizeY)
+    public  void setSize(int sizeX, int sizeY)
     {
-        jSpinner.setSize(SizeX,SizeY);
-        this.SizeX = SizeX;
-        this.SizeY = SizeY;
+        jSpinner.setSize(sizeX,sizeY);
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
     }
-    public void  setPosition(int PositionX, int PositionY)
+    public void  setPosition(int positionX, int positionY)
     {
-        jSpinner.setBounds(PositionX,PositionY,SizeX,SizeY);
-        this.PositionX = PositionX;
-        this.PositionY = PositionY;
+        jSpinner.setBounds(positionX,positionY,sizeX,sizeY);
+        this.positionX = positionX;
+        this.positionY = positionY;
     }
 
-    public int getPositionY() {
-        return PositionY;
+    public int getpositionY() {
+        return positionY;
     }
 
     public int getSizeX() {
-        return SizeX;
+        return sizeX;
     }
 
     public int getSizeY() {
-        return SizeY;
+        return sizeY;
     }
 
 

@@ -6,10 +6,10 @@ import javax.swing.event.HyperlinkListener;
 
 public class EditorPane {
     private JEditorPane jeditorPane = new JEditorPane();
-    private short SizeX = 600;
-    private short SizeY = 600;
-    private short PositionY = 0;
-    private short PositionX = 0;
+    private short sizeX = 600;
+    private short sizeY = 600;
+    private short positionY = 0;
+    private short positionX = 0;
     private boolean isVisible = true;
     public boolean isShown() {
         return isVisible;
@@ -30,38 +30,38 @@ public class EditorPane {
     {
         jeditorPane.removeHyperlinkListener(listener);
     }
-    public void setPosition(short PositionX, short PositionY){
-        jeditorPane.setBounds(PositionX, PositionY,SizeX,SizeY);
-        this.PositionX = PositionX;
-        this.PositionY = PositionY;
+    public void setPosition(short positionX, short positionY){
+        jeditorPane.setBounds(positionX, positionY,sizeX,sizeY);
+        this.positionX = positionX;
+        this.positionY = positionY;
     }
-    public void setSize(short SizeX, short SizeY){
-        this.SizeX = SizeX;
-        this.SizeY = SizeY;
-        jeditorPane.setSize(SizeX,SizeY);
+    public void setSize(short sizeX, short sizeY){
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
+        jeditorPane.setSize(sizeX,sizeY);
     }
-    public void setBounds(short SizeX, short SizeY, short PositionX, short PositionY){
-        this.SizeX = SizeX;
-        this.SizeY = SizeY;
-        this.PositionX = PositionX;
-        this.PositionY = PositionY;
-        jeditorPane.setBounds(PositionX, PositionY, SizeX, SizeY);
+    public void setBounds(short sizeX, short sizeY, short positionX, short positionY){
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
+        this.positionX = positionX;
+        this.positionY = positionY;
+        jeditorPane.setBounds(positionX, positionY, sizeX, sizeY);
     }
 
     public short getSizeX() {
-        return SizeX;
+        return sizeX;
     }
 
     public short getSizeY() {
-        return SizeY;
+        return sizeY;
     }
 
-    public short getPositionY() {
-        return PositionY;
+    public short getpositionY() {
+        return positionY;
     }
 
-    public short getPositionX() {
-        return PositionX;
+    public short getpositionX() {
+        return positionX;
     }
     public JEditorPane getComponent(){
         return jeditorPane;

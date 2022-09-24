@@ -3,25 +3,28 @@ package jadt.utils.cli;
 import java.io.IOException;
 
 public class Console extends Functions{
-    private final Runtime console = Runtime.getRuntime();
+    private static final Runtime console = Runtime.getRuntime();
     public Runtime getRuntime() {
         return console;
     }
-    public void wget(String url) throws IOException {
+    public static void wget(String url) throws IOException {
         console.exec("wget "+url);
     }
-    public void wget(String url, String args)throws IOException {
+    public static void wget(String url, String args)throws IOException {
         console.exec("wget "+args+" "+url);
     }
-    public void wget(String url, String args, String outputFileName)throws IOException {
+    public static void wget(String url, String args, String outputFileName)throws IOException {
         console.exec("wget "+args+" "+url+" "+outputFileName);
     }
-    public void run(String command) throws IOException {
+    public static void run(String command) throws IOException {
         console.exec(command);
     }
     public void getShellName(){}
     public void setShell(String shell){
 
+    }
+    public void print(String message){
+        System.out.println(message);
     }
 
 }

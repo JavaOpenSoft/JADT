@@ -9,51 +9,51 @@ public class PasswordField {
     private boolean isPasswordRevealed = false;
     private final JPasswordField jPasswordField = new JPasswordField();
     private final JTextField revealedPasswordField = new JTextField();
-    private int PositionX,PositionY,SizeX,SizeY;
+    private int positionX,positionY,sizeX,sizeY;
     private String Text;
     private boolean highSecurityMode = false;
     public int getPositionX() {
-        return PositionX;
+        return positionX;
     }
 
     public int getPositionY() {
-        return PositionY;
+        return positionY;
     }
 
     public int getSizeX() {
-        return SizeX;
+        return sizeX;
     }
 
     public int getSizeY() {
-        return SizeY;
+        return sizeY;
     }
     public void setRevealed(boolean isPasswordRevealed){
         if (!isPasswordRevealed){
             jPasswordField.setText(revealedPasswordField.getText());
             revealedPasswordField.setText("");
-            jPasswordField.setBounds(getSizeX(),getSizeY(),getPositionX(),getPositionY());
+            jPasswordField.setBounds(getSizeX(),getSizeY(), getPositionX(),getPositionY());
             jPasswordField.setVisible(true);
             revealedPasswordField.setVisible(false);
             this.isPasswordRevealed = isPasswordRevealed;
         }
         else if(isPasswordRevealed){
             revealedPasswordField.setText(jPasswordField.getText());
-            revealedPasswordField.setBounds(getSizeX(),getSizeY(),getPositionX(),getPositionX());
+            revealedPasswordField.setBounds(getSizeX(),getSizeY(), getPositionX(), getPositionX());
             jPasswordField.setText("");
             jPasswordField.setVisible(false);
             revealedPasswordField.setVisible(true);
             this.isPasswordRevealed = isPasswordRevealed;
         }
     }
-    public void setSize(int SizeX, int SizeY)
+    public void setSize(int SizeX, int sizeY)
     {
-        jPasswordField.setSize(SizeX,SizeY);
-        this.SizeX = SizeX;
-        this.SizeY = SizeY;
+        jPasswordField.setSize(SizeX,sizeY);
+        this.sizeX = SizeX;
+        this.sizeY = sizeY;
     }
-    public void setPosition(int PositionX, int PositionY)
+    public void setPosition(int positionX, int positionY)
     {
-        jPasswordField.setBounds(PositionX,PositionY,SizeX,SizeY);
+        jPasswordField.setBounds(positionX,positionY,sizeX,sizeY);
     }
     public void setText(String Text)
     {

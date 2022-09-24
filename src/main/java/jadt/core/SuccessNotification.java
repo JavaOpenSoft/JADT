@@ -9,8 +9,8 @@ public class SuccessNotification {
 
 	private short x = 600;
 	private short y = 175;
-	final public byte IMAGE_SIZEY =  92;
-	final public byte IMAGE_SIZEX =  84;
+	final public byte IMAGE_sizeY =  92;
+	final public byte IMAGE_sizeX =  84;
 
     JLabel IconImage = new JLabel("");
 	JFrame frame = new JFrame("Success!");

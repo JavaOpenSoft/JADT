@@ -5,7 +5,7 @@ import java.awt.Color;
 
 public class ProgressBar{
     private final JProgressBar progressBar;
-    int SizeX,SizeY,PositionX,PositionY;
+    int SizeX,sizeY,positionX,positionY;
 
     public ProgressBar(int value) {
         progressBar = new JProgressBar(value);
@@ -14,17 +14,17 @@ public class ProgressBar{
     public void setProgressBarProgress(int progress) {
         progressBar.setValue(progress);
     }
-    public void setSize(int SizeX, int SizeY)
+    public void setSize(int SizeX, int sizeY)
     {
-        progressBar.setSize(SizeX,SizeY);
+        progressBar.setSize(SizeX,sizeY);
         this.SizeX = SizeX;
-        this.SizeY = SizeY;
+        this.sizeY = sizeY;
     }
-    public void setPosition(int PositionX, int PositionY)
+    public void setPosition(int positionX, int positionY)
     {
-        progressBar.setBounds(PositionX,PositionY,SizeX,SizeY);
-        this.PositionX = PositionX;
-        this.PositionY = PositionY;
+        progressBar.setBounds(positionX,positionY,SizeX,sizeY);
+        this.positionX = positionX;
+        this.positionY = positionY;
     }
     public void changeColor(Color color)
     {
@@ -42,15 +42,15 @@ public class ProgressBar{
     }
 
     public int getSizeY() {
-        return SizeY;
+        return sizeY;
     }
 
     public int getPositionX() {
-        return PositionX;
+        return positionX;
     }
 
     public int getPositionY() {
-        return PositionY;
+        return positionY;
     }
     public void setDraggable(boolean isDraggable) {
         if (isDraggable) {

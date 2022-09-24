@@ -8,10 +8,10 @@ public class ScrollBar {
     private JScrollPane scrollPane;
     private JScrollBar HorizontalScrollBar = new JScrollBar();
     private JScrollBar BottomScrollBar = new JScrollBar();
-    private int SizeX;
-    private int SizeY;
-    private int PositionX;
-    private int PositionY;
+    private int sizeX;
+    private int sizeY;
+    private int positionX;
+    private int positionY;
 
     public void setPosition(String Position)
     {
@@ -29,20 +29,20 @@ public class ScrollBar {
         else throw new InvalidParameterException("The setPosition() function parameter must give either " +
                 "'HORIZONTAL' OR 'VERTICAL' or 'VERTICAL AND HORIZONTAL'" );
     }
-    public void setSize(int SizeX, int SizeY,String Type)
+    public void setSize(int sizeX, int sizeY,String Type)
     {
-        if (Type.equals("VERTICAL")) HorizontalScrollBar.setSize(SizeX,SizeY);
-        else  if(Type.equals("HORIZONTAL"))BottomScrollBar.setSize(SizeX,SizeY);
+        if (Type.equals("VERTICAL")) HorizontalScrollBar.setSize(sizeX,sizeY);
+        else  if(Type.equals("HORIZONTAL"))BottomScrollBar.setSize(sizeX,sizeY);
         else throw new InvalidParameterException("The setSize() function 'Type' parameter must give either " +
                     "'HORIZONTAL' OR 'VERTICAL");
     }
-    public void setPosition(int PositionX,int PositionY) {
-        HorizontalScrollBar.setBounds(PositionX,PositionY,SizeX,SizeY);
-        BottomScrollBar.setBounds(PositionX,PositionY,SizeX,SizeY);
+    public void setPosition(int positionX,int positionY) {
+        HorizontalScrollBar.setBounds(positionX,positionY,sizeX,sizeY);
+        BottomScrollBar.setBounds(positionX,positionY,sizeX,sizeY);
     }
-    public void setBounds(int SizeX,int SizeY,int PositionX,int PositionY) {
-        HorizontalScrollBar.setBounds(PositionX,PositionY,SizeX,SizeY);
-        BottomScrollBar.setBounds(PositionX,PositionY,SizeX,SizeY);
+    public void setBounds(int sizeX,int sizeY,int positionX,int positionY) {
+        HorizontalScrollBar.setBounds(positionX,positionY,sizeX,sizeY);
+        BottomScrollBar.setBounds(positionX,positionY,sizeX,sizeY);
     }
     public void showHorizontalScrollBar(){
         HorizontalScrollBar.setVisible(true);
