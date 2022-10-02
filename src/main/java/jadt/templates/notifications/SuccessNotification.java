@@ -1,4 +1,4 @@
-package jadt.core;
+package jadt.templates.notifications;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Objects;
@@ -12,12 +12,12 @@ public class SuccessNotification {
 	final public byte IMAGE_sizeY =  92;
 	final public byte IMAGE_sizeX =  84;
 
-    JLabel IconImage = new JLabel("");
-	JFrame frame = new JFrame("Success!");
-	JButton ok = new JButton("Ok");
-	JButton cancel = new JButton();
-	String temp2 = cancel.getText();
-	JLabel successText;
+    private JLabel IconImage = new JLabel("");
+	private JFrame frame = new JFrame("Success!");
+	private JButton ok = new JButton("Ok");
+	private JButton cancel = new JButton();
+	private String temp2 = cancel.getText();
+	private JLabel successText;
 	private String FontName;
 	private String FontType;
 	private short size;

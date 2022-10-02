@@ -1,4 +1,4 @@
-package jadt.core;
+package jadt.templates.notifications;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Objects;
@@ -8,8 +8,8 @@ public class ErrorNotification {
 
 	private short x = 600;
 	private short y = 175;
-	final public int IMAGE_sizeY =  92;
-	final public int IMAGE_sizeX =  84;
+	final public int imageSizeY =  92;
+	final public int imageSizeX =  84;
 
 	JLabel IconImage = new JLabel("");
 	JFrame frame;
