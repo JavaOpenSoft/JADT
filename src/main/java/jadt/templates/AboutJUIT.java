@@ -1,12 +1,8 @@
 package jadt.templates;
 
-import javax.swing.JLabel;
-import javax.swing.JFrame;
-import java.awt.Image;
-import java.awt.Toolkit;
-import javax.swing.ImageIcon;
+import javax.swing.*;
+import java.awt.*;
 import java.util.Objects;
-import java.awt.Font;
 
 public class AboutJUIT {
     private JFrame frame = new JFrame();

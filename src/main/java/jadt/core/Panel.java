@@ -65,10 +65,17 @@ public class Panel {
         jPanel.setLayout((LayoutManager) freeFormLayout.getLayout());
     }
 
-    public void setLayout(BoxLayouts boxLayouts, AppComponent pane, int AXIS) {
-        jPanel.setLayout(boxLayouts.getBoxLayout(pane, AXIS));
-        if (AXIS != BoxLayouts.X_AXIS && AXIS != BoxLayouts.Y_AXIS) throw new InvalidParameterException("setLayout()" +
-                " Function AXIS Parameter Which is Invalid. Try To use'BoxLayouts.Y_AXIS' or 'BoxLayouts.X_AXIS'");
+    public void setLayout(BoxLayouts boxLayouts, Window pane, int AXIS)
+    {
+        jPanel.setLayout(boxLayouts.getBoxLayout(pane.getComponent(), AXIS));
+        if(AXIS != BoxLayouts.X_AXIS &&AXIS != BoxLayouts.Y_AXIS) throw new InvalidParameterException("setLayout()" +
+                " Function AXIS Parameter is Invalid. Try To use 'BoxLayouts.Y_AXIS' or 'BoxLayouts.X_AXIS'");
+    }
+    public void setLayout(BoxLayouts boxLayouts, Panel pane, int AXIS)
+    {
+        jPanel.setLayout(boxLayouts.getBoxLayout(pane.getComponent(), AXIS));
+        if(AXIS != BoxLayouts.X_AXIS &&AXIS != BoxLayouts.Y_AXIS) throw new InvalidParameterException("setLayout()" +
+                " Function AXIS Parameter is Invalid. Try To use 'BoxLayouts.Y_AXIS' or 'BoxLayouts.X_AXIS'");
     }
 
     public void setLayout(jadt.layouts.CardLayout cardLayout) {

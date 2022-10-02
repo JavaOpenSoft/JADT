@@ -1,12 +1,9 @@
 package jadt.templates.clock;
 
-import javax.swing.JLabel;
-import javax.swing.JFrame;
-import java.awt.FlowLayout;
+import javax.swing.*;
+import java.awt.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.awt.Font;
-import java.awt.Color;
 class DigitalClock extends JFrame {
 
     Calendar calendar;

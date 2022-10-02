@@ -2,7 +2,7 @@ package jadt.core;
 
 import javax.swing.*;
 @SuppressWarnings("all")
-public class MenuBar {
+public class MenuBar extends AppComponent{
     private JMenuBar menuBar = new JMenuBar();
     private int positionX;
     private int positionY;

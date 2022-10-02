@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileActions {
-    private File file = null;
+    private static File file = null;
     private BufferedWriter bufferedWriter;
     private BufferedReader bufferedReader;
     private String inPath,outPath;
@@ -116,6 +116,24 @@ public class FileActions {
     public String getOutPath()
     {
         return outPath;
+    }
+    public static long getFileSizeInBits() {
+        return file.length() * 8;
+    }
+
+    public static long getFileSizeInBytes() {
+        return file.length();
+    }
+
+    public static long getFileSizeInKilobytes() {
+        return file.length() / 1024;
+    }
+    public static long getFileSizeInMegabytes() {
+        return (long) (file.length() / Math.pow(1024, 2));
+    }
+
+    public static long getFileSizeInGigabytes() {
+        return (long) (file.length() / Math.pow(1024, 3));
     }
 
 }

@@ -3,12 +3,12 @@ package jadt.core;
 import javax.swing.*;
 import java.awt.*;
 
-public class Menu {
+public class Menu extends AppComponent{
     private final JMenu menu = new JMenu();
     private String Text;
     private String FontName;
     private String FontType;
-    private short size;
+    private short fontSize;
     public Menu(String Text)
     {
         menu.setText(Text);
@@ -27,7 +27,7 @@ public class Menu {
         if(FontType.equals("Italic"))menu.setFont(new Font(FontName, Font.ITALIC, size));
         this.FontName = FontName;
         this.FontType = FontType;
-        this.size = size;
+        this.fontSize = size;
     }
     public String getText()
     {
@@ -43,10 +43,10 @@ public class Menu {
     }
     public short getFontSize()
     {
-        return this.size;
+        return this.fontSize;
     }
     public void add(RadioButtonMenuItem radioButtonMenuItem){
-        menu.add(radioButtonMenuItem.jRadioButtonMenuItem);
+        menu.add(radioButtonMenuItem.getComponent());
     }
     public void add(CheckboxMenuItem checkboxMenuItem)
     {

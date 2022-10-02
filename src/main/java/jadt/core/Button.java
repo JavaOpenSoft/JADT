@@ -1,4 +1,6 @@
 package jadt.core;
+import jadt.graphics.Color;
+
 import javax.swing.JButton;
 import javax.swing.Icon;
 import java.awt.event.ActionListener;
@@ -9,7 +11,10 @@ public class Button extends AppComponent {
     private JButton jButton = new JButton();
 
     private String Text;
-    private int positionY = 50, positionX = 100, sizeX = 100,sizeY = 50;
+    private int positionY = 0,
+    positionX = 0,
+    sizeX = 100,
+    sizeY = 50;
     private boolean isVisible = false;
     @Override
     public boolean equals(Object o) {
@@ -93,6 +98,12 @@ public class Button extends AppComponent {
 
     public boolean isVisible(){
         return isVisible;
+    }
+    public void setColor(Color color){
+        jButton.setBackground(color);
+    }
+    public void setTextColor(Color color){
+        jButton.setForeground(color);
     }
 
 }

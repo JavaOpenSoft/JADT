@@ -4,13 +4,15 @@ import javax.swing.*;
 
 @SuppressWarnings("deprecated")
 
-public class PasswordField {
+public class PasswordField extends AppComponent{
     public final char DEFAULT_DISPLAY_CHARACTER = '\u25CF';
     private boolean isPasswordRevealed = false;
     private final JPasswordField jPasswordField = new JPasswordField();
     private final JTextField revealedPasswordField = new JTextField();
-    private int positionX,positionY,sizeX,sizeY;
-    private String Text;
+    private int positionX;
+    private int positionY;
+    private int sizeX;
+    private int sizeY;
     private boolean highSecurityMode = false;
     public int getPositionX() {
         return positionX;
@@ -58,7 +60,6 @@ public class PasswordField {
     public void setText(String Text)
     {
         jPasswordField.setText(Text);
-        this.Text = Text;
     }
     public void copy(){
         if(!highSecurityMode)jPasswordField.copy();
@@ -67,8 +68,11 @@ public class PasswordField {
         if(!highSecurityMode)jPasswordField.paste();
     }
     public void cut(){
-        if(!highSecurityMode)jPasswordField.cut();
-        else throw new RuntimeException("High Security mode for the password field is enabled, means that you cannot copy,cut,paste or view passwords.");
+        if(!highSecurityMode) {
+            jPasswordField.cut();
+            System.err.println("High Security mode for the password field is enabled, means that you cannot copy,cut,paste or view passwords.");
+        }
+        else throw new RuntimeException("");
     }
     public void editable(boolean isEditable){
         jPasswordField.setEditable(isEditable);
@@ -82,12 +86,12 @@ public class PasswordField {
     public String getText()
     {
         String txt = null;
-        if(Text.isEmpty()){
+        if(!jPasswordField.getText().isEmpty()){
 
             if(!isPasswordRevealed)txt = jPasswordField.getText();
             if(isPasswordRevealed)txt = revealedPasswordField.getText();
         }
-        else if(!Text.isEmpty())txt = Text;
+        else if(jPasswordField.getText().isEmpty() && revealedPasswordField.getText().isEmpty())txt = "";
         return txt;
     }
     public JPasswordField getComponent(){

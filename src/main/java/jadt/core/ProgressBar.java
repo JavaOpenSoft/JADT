@@ -3,7 +3,7 @@ package jadt.core;
 import javax.swing.JProgressBar;
 import java.awt.Color;
 
-public class ProgressBar{
+public class ProgressBar extends AppComponent{
     private final JProgressBar progressBar;
     int SizeX,sizeY,positionX,positionY;
 
@@ -60,5 +60,11 @@ public class ProgressBar{
     }
     public JProgressBar getComponent(){
         return progressBar;
+    }
+    public void setColor(jadt.graphics.Color color){
+        progressBar.setBackground(color);
+    }
+    public void setTextColor(jadt.graphics.Color color){
+        progressBar.setForeground(color);
     }
 }

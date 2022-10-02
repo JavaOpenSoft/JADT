@@ -4,7 +4,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.Icon;
 
-public class Label {
+public class Label extends AppComponent{
     int positionX = 0;
     int positionY = 0;
     int sizeX = 100;
@@ -80,6 +80,7 @@ public class Label {
     public void setSize(int SizeX, int sizeY){
         label.setSize(SizeX, sizeY);
         this.sizeX = SizeX;
+
         this.sizeY = sizeY;
     }
     public String getFontType()

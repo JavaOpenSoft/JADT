@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 import java.awt.Image;
 
 
-public class ImageFrame {
+public class ImageFrame extends AppComponent{
     private JLabel imageFrame = new JLabel();
     private int sizeX,sizeY,positionX,positionY;
     private final Dimension size = Toolkit.getDefaultToolkit().getScreenSize();

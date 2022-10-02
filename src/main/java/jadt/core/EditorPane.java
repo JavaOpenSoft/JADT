@@ -4,7 +4,7 @@ import javax.swing.*;
 import javax.swing.event.HyperlinkListener;
 
 
-public class EditorPane {
+public class EditorPane extends AppComponent{
     private JEditorPane jeditorPane = new JEditorPane();
     private short sizeX = 600;
     private short sizeY = 600;
@@ -48,11 +48,11 @@ public class EditorPane {
         jeditorPane.setBounds(positionX, positionY, sizeX, sizeY);
     }
 
-    public short getSizeX() {
+    public int getSizeX() {
         return sizeX;
     }
 
-    public short getSizeY() {
+    public int getSizeY() {
         return sizeY;
     }
 

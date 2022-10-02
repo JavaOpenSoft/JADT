@@ -1,7 +1,7 @@
 package jadt.templates.clock;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.text.SimpleDateFormat;
@@ -9,8 +9,6 @@ import java.util.Calendar;
 import java.util.TimeZone;
 import java.util.Timer;
 import java.util.TimerTask;
-
-import javax.swing.JFrame;
 
 /*
  * Clock analog

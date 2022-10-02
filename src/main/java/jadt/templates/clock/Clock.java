@@ -1,7 +1,7 @@
 package jadt.templates.clock;
 
 
-import java.awt.Component;
+import java.awt.*;
 public class Clock {
     String type = "";
     public Component getDigitalClock()

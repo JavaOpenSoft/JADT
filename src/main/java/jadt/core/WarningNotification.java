@@ -6,7 +6,7 @@ import java.util.Objects;
 import static java.util.Objects.*;
 
 @SuppressWarnings({"ALL", "SpellCheckingInspection"})
-public class WarningNotification {
+public class WarningNotification extends AppComponent{
 
 
     private short x = 600;

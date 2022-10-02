@@ -2,10 +2,11 @@ package jadt.utils;
 @SuppressWarnings("all")
 public class SoftwareInfo {
     private final String About = "App development made easy";
-    private final String Version = "1.0_rc5";
-    private final String BuildDate = "2022.24.10";
-    private final String[] windowsVersions = {"Windows 11", "Windows 8", "Windows 8.1", "Windows 7"};
-    public String getOS(){
+    private final String Version = "1.0_rc6";
+    private final String BuildDate = "02/10/2022";
+    private static final String buildStage = "Release Candidate Build";
+    private static final String[] windowsVersions = {"Windows 11", "Windows 8", "Windows 8.1", "Windows 7"};
+    public static String getOS(){
         String os = System.getProperty("os.name");
         for(int i = 0; i < windowsVersions.length; i++){
             if (os.equals(windowsVersions[i])) {

@@ -7,7 +7,7 @@ import javax.swing.event.MenuDragMouseListener;
 import javax.swing.event.MenuKeyListener;
 import java.awt.event.*;
 import java.beans.PropertyChangeListener;
-public class CheckboxMenuItem{
+public class CheckboxMenuItem {
      String Text = "";
     private final JCheckBoxMenuItem jCheckBoxMenuItem = new JCheckBoxMenuItem();
     public void setText(String Text)

@@ -15,11 +15,11 @@ public class Icon implements javax.swing.Icon {
 
     @Override
     public int getIconWidth() {
-        return 0;
+        return IconWidth;
     }
 
     @Override
     public int getIconHeight() {
-        return 0;
+        return IconHeight;
     }
 }

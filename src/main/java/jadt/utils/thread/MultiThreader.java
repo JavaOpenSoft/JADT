@@ -3,11 +3,11 @@ import java.util.ArrayList;
 
 public class MultiThreader {
     ArrayList <ThreadTask> tasks = new ArrayList<>();
-    public void addTask(ThreadTask task, int threadIndex){
+    public void addTask(ThreadTask task){
         tasks.add(task);
     }
-    public void getTask(int threadIndex){
-        tasks.get(threadIndex);
+    public ThreadTask getTask(int threadIndex){
+        return tasks.get(threadIndex);
     }
     public void removeTask(int threadIndex){
         tasks.remove(threadIndex);
@@ -23,4 +23,5 @@ public class MultiThreader {
             tasks.get(i).start();
         }
     }
+
 }
