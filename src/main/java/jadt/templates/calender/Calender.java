@@ -8,12 +8,12 @@ import java.util.Calendar;
 import jadt.core.Window;
 public class Calender {
     private Window window;
-    private Subclass sc = new Subclass(11,2021);
+    private Subclass sc = new Subclass(10,2022);
     public Calender(Window window) {
         this.window = window;
         // Month is zero based
 
-        Subclass panel = new Subclass(11, 2021);
+        Subclass panel = new Subclass(10, 2022);
         window.setTitle("Calendar");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.getComponent().addWindowListener(new WindowAdapter() {
