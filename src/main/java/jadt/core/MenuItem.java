@@ -3,8 +3,9 @@ package jadt.core;
 import javax.swing.*;
 import java.awt.*;
 
+@SuppressWarnings("ALL")
 public class MenuItem {
-    JMenuItem menuItem = new JMenuItem();
+    private JMenuItem menuItem = new JMenuItem();
     private String FontName;
     private String FontType;
     String Text;
@@ -45,5 +46,8 @@ public class MenuItem {
     public short getFontSize()
     {
         return this.size;
+    }
+    public JMenuItem getComponent(){
+        return menuItem;
     }
 }

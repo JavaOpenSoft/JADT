@@ -4,7 +4,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.Icon;
 
-public class Label extends AppComponent{
+public class Label {
     int positionX = 0;
     int positionY = 0;
     int sizeX = 100;
@@ -64,7 +64,8 @@ public class Label extends AppComponent{
     {
         return label.getText();
     }
-    public void setFont(String FontName,String FontType,short size)
+    @SuppressWarnings("DuplicatedCode")
+    public void setFont(String FontName, String FontType, short size)
     {
         if(FontType.equals("Plain"))label.setFont(new Font(FontName, Font.PLAIN, size));
         if(FontType.equals("Bold"))label.setFont(new Font(FontName, Font.BOLD, size));
@@ -90,5 +91,8 @@ public class Label extends AppComponent{
     public short getFontSize()
     {
         return this.size;
+    }
+    public void setBounds(int sizeX, int sizeY, int positionX, int positionY){
+        label.setBounds(positionX, positionY, sizeX, sizeY);
     }
 }

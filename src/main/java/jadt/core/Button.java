@@ -1,4 +1,5 @@
 package jadt.core;
+import jadt.core.misc.Draggable;
 import jadt.graphics.Color;
 
 import javax.swing.JButton;
@@ -7,9 +8,9 @@ import java.awt.event.ActionListener;
 import java.util.Objects;
 
 @SuppressWarnings("ALL")
-public class Button extends AppComponent {
+public class Button  {
     private JButton jButton = new JButton();
-
+    private Draggable draggable;
     private String Text;
     private int positionY = 0,
     positionX = 0,
@@ -104,6 +105,14 @@ public class Button extends AppComponent {
     }
     public void setTextColor(Color color){
         jButton.setForeground(color);
+    }
+    public void setDraggable(boolean isDraggable){
+        if(isDraggable) {
+            draggable = new Draggable(jButton);
+        }
+        else if(!isDraggable){
+            draggable = null;
+        }
     }
 
 }

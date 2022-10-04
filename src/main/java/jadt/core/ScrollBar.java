@@ -2,7 +2,7 @@ package jadt.core;
 import javax.swing.*;
 import java.security.InvalidParameterException;
 
-public class ScrollBar extends AppComponent{
+public class ScrollBar {
     public static final byte VERTICAL = 0;
     public static final byte HORIZONTAL = 1;
     private JScrollPane scrollPane;

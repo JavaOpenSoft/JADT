@@ -2,7 +2,9 @@ package jadt.core;
 
 import javax.swing.*;
 
+@SuppressWarnings("FieldMayBeFinal")
 public class RadioButtonMenuItem {
+    @SuppressWarnings("FieldMayBeFinal")
     private JRadioButtonMenuItem jRadioButtonMenuItem = new JRadioButtonMenuItem();
     String Text;
     public RadioButtonMenuItem(String Text)

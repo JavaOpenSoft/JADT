@@ -2,7 +2,9 @@ package jadt.core;
 
 import javax.swing.*;
 
-public class TextPane extends AppComponent{
+@SuppressWarnings("FieldMayBeFinal")
+public class TextPane {
+    @SuppressWarnings("FieldMayBeFinal")
     private JTextPane jTextPane = new JTextPane();
     public JTextPane getComponent() {
         return jTextPane;

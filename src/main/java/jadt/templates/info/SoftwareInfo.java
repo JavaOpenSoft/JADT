@@ -1,5 +1,5 @@
 package jadt.templates.info;
-
+@SuppressWarnings("all")
 public class SoftwareInfo {
     private final String About = "Templates Plugin for JUIT. Contains templates for commonly designed apps.";
     private final String Version = "1.0_rc6";
@@ -8,8 +8,8 @@ public class SoftwareInfo {
     private static final String[] windowsVersions = {"Windows 11", "Windows 8", "Windows 8.1", "Windows 7"};
     public static String getOS(){
         String os = System.getProperty("os.name");
-        for(int i = 0; i < windowsVersions.length; i++){
-            if (os.equals(windowsVersions[i])) {
+        for (String windowsVersion : windowsVersions) {
+            if (os.equals(windowsVersion)) {
                 os = "Windows";
                 break;
             }

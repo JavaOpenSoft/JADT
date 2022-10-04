@@ -2,7 +2,9 @@ package jadt.core;
 
 import javax.swing.*;
 
+@SuppressWarnings("FieldMayBeFinal")
 public class PopupMenu{
+    @SuppressWarnings("FieldMayBeFinal")
     private JPopupMenu jPopupMenu = new JPopupMenu();
 
     public JPopupMenu getComponent() {

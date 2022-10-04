@@ -9,8 +9,8 @@ import java.util.Objects;
 public class Brush extends Cursor {
     private jadt.graphics.Color color;
 
-    private int BrushsizeX;
-    private int BrushsizeY;
+    private int brushSizeX;
+    private int brushSizeY;
     public Brush(){
         super(CROSSHAIR_CURSOR);
     }
@@ -26,28 +26,28 @@ public class Brush extends Cursor {
     public void resetColor() {
         color = (Color) Color.BLACK;
     }
-    public void setBrushSize(int BrushsizeX, int BrushsizeY) {
-        this.BrushsizeX = BrushsizeX;
-        this.BrushsizeY = BrushsizeY;
+    public void setBrushSize(int brushSizeX, int brushSizeY) {
+        this.brushSizeX = brushSizeX;
+        this.brushSizeY = brushSizeY;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Brush brush)) return false;
-        return BrushsizeX == brush.BrushsizeX && BrushsizeY == brush.BrushsizeY && Objects.equals(color, brush.color);
+        return brushSizeX == brush.brushSizeX && brushSizeY == brush.brushSizeY && Objects.equals(color, brush.color);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(color, BrushsizeX, BrushsizeY);
+        return Objects.hash(color, brushSizeX, brushSizeY);
     }
 
-    public int getBrushsizeY(){
-        return this.BrushsizeY;
+    public int getBrushSizeY(){
+        return this.brushSizeY;
     }
     public int getBrushX(){
-        return this.BrushsizeX;
+        return this.brushSizeX;
     }
 
 }

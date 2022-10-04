@@ -3,7 +3,7 @@ package jadt.core;
 import javax.swing.JProgressBar;
 import java.awt.Color;
 
-public class ProgressBar extends AppComponent{
+public class ProgressBar {
     private final JProgressBar progressBar;
     int SizeX,sizeY,positionX,positionY;
 
@@ -52,12 +52,7 @@ public class ProgressBar extends AppComponent{
     public int getPositionY() {
         return positionY;
     }
-    public void setDraggable(boolean isDraggable) {
-        if (isDraggable) {
-            
-        }
 
-    }
     public JProgressBar getComponent(){
         return progressBar;
     }

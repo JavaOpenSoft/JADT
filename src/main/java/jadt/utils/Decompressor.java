@@ -14,9 +14,10 @@ public class Decompressor {
         return archiveFile;
     }
     public void decompressZIP(String zipFilePath, String destDir){
+        boolean temp;
         File dir = new File(destDir);
         // create output directory if it doesn't exist
-        if(!dir.exists()) dir.mkdirs();
+        if(!dir.exists()) temp = dir.mkdirs();
         FileInputStream fis;
         //buffer for read and write data to file
         byte[] buffer = new byte[1024];
@@ -29,7 +30,7 @@ public class Decompressor {
                 File newFile = new File(destDir + File.separator + fileName);
                 System.out.println("Unzipping to "+newFile.getAbsolutePath());
                 //create directories for sub directories in zip
-                new File(newFile.getParent()).mkdirs();
+                temp = new File(newFile.getParent()).mkdirs();
                 FileOutputStream fos = new FileOutputStream(newFile);
                 int len;
                 while ((len = zis.read(buffer)) > 0) {

@@ -3,7 +3,9 @@ package jadt.core;
 import javax.swing.*;
 import java.beans.PropertyChangeListener;
 
-public class Separator extends AppComponent implements SwingConstants{
+@SuppressWarnings("FieldMayBeFinal")
+public class Separator  implements SwingConstants{
+    @SuppressWarnings("FieldMayBeFinal")
     private JSeparator separator = new JSeparator();
     int sizeX,sizeY,positionX,positionY;
     public void setOrientation(int Orientation){
@@ -12,7 +14,6 @@ public class Separator extends AppComponent implements SwingConstants{
     public void setBounds(int sizeX,int sizeY, int positionX, int positionY){
         separator.setBounds(sizeX,sizeY,positionX,positionY);
     }
-    @Override
     public int getSizeX() {
         return sizeX;
     }

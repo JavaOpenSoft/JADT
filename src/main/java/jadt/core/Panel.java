@@ -1,6 +1,7 @@
 package jadt.core;
 
 import jadt.layouts.*;
+import jadt.layouts.BoxLayout;
 import jadt.layouts.GridBagLayout;
 import jadt.templates.clock.Clock;
 
@@ -9,6 +10,7 @@ import java.awt.*;
 import java.security.InvalidParameterException;
 
 public class Panel {
+    @SuppressWarnings("FieldMayBeFinal")
     private JPanel jPanel = new JPanel();
     public JPanel getComponent() { return jPanel; }
 
@@ -65,17 +67,17 @@ public class Panel {
         jPanel.setLayout((LayoutManager) freeFormLayout.getLayout());
     }
 
-    public void setLayout(BoxLayouts boxLayouts, Window pane, int AXIS)
+    public void setLayout(BoxLayout boxLayout, Window pane, int AXIS)
     {
-        jPanel.setLayout(boxLayouts.getBoxLayout(pane.getComponent(), AXIS));
-        if(AXIS != BoxLayouts.X_AXIS &&AXIS != BoxLayouts.Y_AXIS) throw new InvalidParameterException("setLayout()" +
-                " Function AXIS Parameter is Invalid. Try To use 'BoxLayouts.Y_AXIS' or 'BoxLayouts.X_AXIS'");
+        jPanel.setLayout(boxLayout.getBoxLayout(pane.getComponent(), AXIS));
+        if(AXIS != BoxLayout.X_AXIS &&AXIS != BoxLayout.Y_AXIS) throw new InvalidParameterException("setLayout()" +
+                " Function AXIS Parameter is Invalid. Try To use 'BoxLayout.Y_AXIS' or 'BoxLayout.X_AXIS'");
     }
-    public void setLayout(BoxLayouts boxLayouts, Panel pane, int AXIS)
+    public void setLayout(BoxLayout boxLayout, Panel pane, int AXIS)
     {
-        jPanel.setLayout(boxLayouts.getBoxLayout(pane.getComponent(), AXIS));
-        if(AXIS != BoxLayouts.X_AXIS &&AXIS != BoxLayouts.Y_AXIS) throw new InvalidParameterException("setLayout()" +
-                " Function AXIS Parameter is Invalid. Try To use 'BoxLayouts.Y_AXIS' or 'BoxLayouts.X_AXIS'");
+        jPanel.setLayout(boxLayout.getBoxLayout(pane.getComponent(), AXIS));
+        if(AXIS != BoxLayout.X_AXIS &&AXIS != BoxLayout.Y_AXIS) throw new InvalidParameterException("setLayout()" +
+                " Function AXIS Parameter is Invalid. Try To use 'BoxLayout.Y_AXIS' or 'BoxLayout.X_AXIS'");
     }
 
     public void setLayout(jadt.layouts.CardLayout cardLayout) {

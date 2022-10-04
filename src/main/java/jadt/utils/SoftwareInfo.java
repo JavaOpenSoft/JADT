@@ -1,9 +1,9 @@
 package jadt.utils;
 @SuppressWarnings("all")
 public class SoftwareInfo {
-    private final String About = "App development made easy";
-    private final String Version = "1.0_rc6";
-    private final String BuildDate = "02/10/2022";
+    private static final String About = "App development made easy with Java Application Development Toolkit(JADT)";
+    private static final String Version = "1.0_rc6";
+    private static final String BuildDate = "02/10/2022";
     private static final String buildStage = "Release Candidate Build";
     private static final String[] windowsVersions = {"Windows 11", "Windows 8", "Windows 8.1", "Windows 7"};
     public static String getOS(){
@@ -16,18 +16,18 @@ public class SoftwareInfo {
         }
         return os;
     }
-    public String getOSVersion() {
+    public static String getOSVersion() {
         return System.getProperty("os.version");
     }
-    public String getVersion(){
+    public static String getVersion(){
         return Version;
     }
 
-    public String getAbout() {
+    public static String getAbout() {
         return About;
     }
 
-    public String getBuildDate() {
+    public static String getBuildDate() {
         return BuildDate;
     }
 }

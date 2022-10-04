@@ -2,9 +2,9 @@ package jadt.core;
 
 import javax.swing.*;
 
-@SuppressWarnings("deprecated")
+@SuppressWarnings({"deprecated", "DuplicateCondition"})
 
-public class PasswordField extends AppComponent{
+public class PasswordField {
     public final char DEFAULT_DISPLAY_CHARACTER = '\u25CF';
     private boolean isPasswordRevealed = false;
     private final JPasswordField jPasswordField = new JPasswordField();
@@ -14,6 +14,10 @@ public class PasswordField extends AppComponent{
     private int sizeX;
     private int sizeY;
     private boolean highSecurityMode = false;
+
+    public PasswordField(){
+
+    }
     public int getPositionX() {
         return positionX;
     }
@@ -30,6 +34,7 @@ public class PasswordField extends AppComponent{
         return sizeY;
     }
     public void setRevealed(boolean isPasswordRevealed){
+        //noinspection DuplicateCondition
         if (!isPasswordRevealed){
             jPasswordField.setText(revealedPasswordField.getText());
             revealedPasswordField.setText("");
@@ -38,13 +43,14 @@ public class PasswordField extends AppComponent{
             revealedPasswordField.setVisible(false);
             this.isPasswordRevealed = isPasswordRevealed;
         }
-        else if(isPasswordRevealed){
-            revealedPasswordField.setText(jPasswordField.getText());
+        else //noinspection DuplicateCondition,ConstantConditions
+            if(isPasswordRevealed){
+            revealedPasswordField.setText(new String(jPasswordField.getPassword()));
             revealedPasswordField.setBounds(getSizeX(),getSizeY(), getPositionX(), getPositionX());
             jPasswordField.setText("");
             jPasswordField.setVisible(false);
             revealedPasswordField.setVisible(true);
-            this.isPasswordRevealed = isPasswordRevealed;
+                this.isPasswordRevealed = isPasswordRevealed;
         }
     }
     public void setSize(int SizeX, int sizeY)
@@ -70,7 +76,12 @@ public class PasswordField extends AppComponent{
     public void cut(){
         if(!highSecurityMode) {
             jPasswordField.cut();
-            System.err.println("High Security mode for the password field is enabled, means that you cannot copy,cut,paste or view passwords.");
+            System.err.print("""
+                    High Security mode for the password field is enabled, means that you cannot
+                    1. copy
+                    2. cut
+                    3. paste
+                    4. get Password as an String5. view passwords.""");
         }
         else throw new RuntimeException("");
     }
@@ -83,16 +94,17 @@ public class PasswordField extends AppComponent{
     public void changeHiddenCharacter(char DisplayCharacter){
         jPasswordField.setEchoChar(DisplayCharacter);
     }
-    public String getText()
+    public Object getText()
     {
-        String txt = null;
-        if(!jPasswordField.getText().isEmpty()){
-
-            if(!isPasswordRevealed)txt = jPasswordField.getText();
-            if(isPasswordRevealed)txt = revealedPasswordField.getText();
+        if(!new String(jPasswordField.getPassword()).isEmpty()){
+            if(!isPasswordRevealed && highSecurityMode) return jPasswordField.getPassword();
+            //noinspection DuplicateCondition
+            if(!isPasswordRevealed)return new String(jPasswordField.getPassword());
+            //noinspection ConstantConditions
+            if(isPasswordRevealed)return revealedPasswordField.getText();
         }
-        else if(jPasswordField.getText().isEmpty() && revealedPasswordField.getText().isEmpty())txt = "";
-        return txt;
+        else if(new String(jPasswordField.getPassword()).isEmpty() && revealedPasswordField.getText().isEmpty())return "";
+        return null;
     }
     public JPasswordField getComponent(){
         return jPasswordField;

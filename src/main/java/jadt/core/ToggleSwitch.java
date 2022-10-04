@@ -2,29 +2,27 @@ package jadt.core;
 
 import javax.swing.*;
 
-public class ToggleSwitch extends AppComponent{
+@SuppressWarnings("FieldMayBeFinal")
+public class ToggleSwitch {
     private int positionX;
     private int positionY;
     private int sizeX;
     private int sizeY;
+    @SuppressWarnings("FieldMayBeFinal")
     private JToggleButton jToggleButton = new JToggleButton();
 
     public String getText() {
         return jToggleButton.getText();
     }
-    @Override
     public int getPositionX() {
         return positionX;
     }
-    @Override
     public int getPositionY() {
         return positionY;
     }
-    @Override
     public int getSizeX() {
         return sizeX;
     }
-    @Override
     public int getSizeY() {
         return sizeY;
     }

@@ -5,6 +5,7 @@ import javax.swing.filechooser.FileSystemView;
 import javax.swing.filechooser.FileView;
 import java.io.File;
 
+@SuppressWarnings("FieldMayBeFinal")
 public class FileChooser {
     public static final int OPEN_DIALOG = 0;
     public static final int SAVE_DIALOG = 1;
@@ -13,6 +14,7 @@ public class FileChooser {
     public static final int APPROVE_OPTION = 0;
     public static final int ERROR_OPTION = -1;
 
+    @SuppressWarnings("FieldMayBeFinal")
     private JFileChooser jFileChooser = new JFileChooser();
     public JFileChooser getFileChooser() {
         return jFileChooser;

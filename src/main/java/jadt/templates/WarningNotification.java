@@ -1,5 +1,4 @@
 package jadt.templates;
-import jadt.core.AppComponent;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,7 +7,7 @@ import java.util.Objects;
 import static java.util.Objects.*;
 
 @SuppressWarnings({"ALL", "SpellCheckingInspection"})
-public class WarningNotification extends AppComponent {
+public class WarningNotification{
 
 
     private short x = 600;

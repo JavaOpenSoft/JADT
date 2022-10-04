@@ -57,9 +57,8 @@ public class Cursor extends java.awt.Cursor{
     public Cursor getMoveCursor() {
         return new Cursor(MOVE_CURSOR);
     }
-    public java.awt.Cursor convertImageToCustomCursor(Image image, AppComponent appComponent){
-        java.awt.Cursor c = Toolkit.getDefaultToolkit().createCustomCursor(image , new Point(appComponent.getPositionX(),
-                appComponent.getPositionY()), "img");
-        return c;
+    public static java.awt.Cursor convertImageToCustomCursor(String cursorName, Image image, int x, int y){
+        return Toolkit.getDefaultToolkit().createCustomCursor(image , new Point(x,
+                y), cursorName);
     }
 }

@@ -14,7 +14,7 @@ public class Date extends Time{
     }
     public void printCurrentDate()
     {
-        System.out.println(getDate());
+        System.out.println(getCurrentDate());
     }
     public void print(int index){
         System.out.println(index);

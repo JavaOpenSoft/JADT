@@ -7,7 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.URI;
-import java.net.URL;
 
 public class HyperLinkButton {
     private short positionX;
@@ -17,6 +16,7 @@ public class HyperLinkButton {
     public final java.awt.Color URL_Colour = new java.awt.Color(0, 143, 241);
     public final java.awt.Color ClickedURL_Colour = new java.awt.Color(176, 86, 242);
     private final JButton button = new JButton();
+    @SuppressWarnings("SpellCheckingInspection")
     private boolean isDirectable;
     private String url;
     public JButton getComponent() {
@@ -51,6 +51,7 @@ public class HyperLinkButton {
         this.sizeY = sizeY;
         button.setSize(sizeX, sizeY);
     }
+    @SuppressWarnings("SpellCheckingInspection")
     public void directToURLWhenClicked(boolean isDirectable){
         this.isDirectable = isDirectable;
     }

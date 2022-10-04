@@ -2,7 +2,7 @@ package jadt.core;
 
 import com.formdev.flatlaf.util.SystemInfo;
 
-public class MacOSScreenMenuBar extends AppComponent{
+public class MacOSScreenMenuBar {
     private MenuBar menuBar;
     private Window window;
     private String applicationName;

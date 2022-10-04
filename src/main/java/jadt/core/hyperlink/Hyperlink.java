@@ -1,5 +1,4 @@
 package jadt.core.hyperlink;
-import jadt.core.AppComponent;
 
 import javax.swing.JLabel;
 import java.awt.*;
@@ -9,7 +8,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-public class Hyperlink extends AppComponent {
+public class Hyperlink  {
     public final java.awt.Color URL_Colour = new java.awt.Color(0, 143, 241);
     public final java.awt.Color ClickedURL_Colour = new java.awt.Color(176, 86, 242);
     int sizeX;
@@ -24,9 +23,7 @@ public class Hyperlink extends AppComponent {
                 try {
                     Desktop.getDesktop().browse(new URI(urlLabel.getText()));
                     setClickedColor();
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                } catch (URISyntaxException ex) {
+                } catch (IOException | URISyntaxException ex) {
                     throw new RuntimeException(ex);
                 }
             }
@@ -42,9 +39,7 @@ public class Hyperlink extends AppComponent {
                 try {
                     Desktop.getDesktop().browse(new URI(urlLabel.getText()));
                     setClickedColor();
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                } catch (URISyntaxException ex) {
+                } catch (IOException | URISyntaxException ex) {
                     throw new RuntimeException(ex);
                 }
                 setClickedColor();

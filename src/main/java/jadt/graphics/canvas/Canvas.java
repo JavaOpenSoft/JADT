@@ -1,12 +1,12 @@
 package jadt.graphics.canvas;
 
-import jadt.core.AppComponent;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
 import java.awt.image.ImageObserver;
-public class Canvas extends AppComponent {
+@SuppressWarnings("all")
+public class Canvas{
     private java.awt.Canvas canvas = new java.awt.Canvas();
     private Graphics g = canvas.getGraphics();
     private jadt.graphics.Color color = new jadt.graphics.Color(255,255,255);
@@ -124,7 +124,7 @@ public class Canvas extends AppComponent {
     public void setBrushSize(int brushSizeX, int brushSizeY) {
         brush.setBrushSize(brushSizeX, brushSizeY);
     }
-    public int getBrushsizeY(){
+    public int getBrushSizeY(){
         return brush.getBrushX();
     }
     public int getBrushX(){
@@ -138,6 +138,9 @@ public class Canvas extends AppComponent {
     }
 
     public void show(){
-
+        isBrushShown = true;
+    }
+    public void hide(){
+        isBrushShown = false;
     }
 }

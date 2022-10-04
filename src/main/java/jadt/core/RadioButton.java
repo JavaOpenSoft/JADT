@@ -3,7 +3,9 @@ package jadt.core;
 import javax.swing.*;
 
 
+@SuppressWarnings("FieldMayBeFinal")
 public class RadioButton {
+    @SuppressWarnings("FieldMayBeFinal")
     private JRadioButton jRadioButton = new JRadioButton();
     int sizeX,sizeY,positionX,positionY;
     private String Text;
@@ -39,10 +41,10 @@ public class RadioButton {
     {
         return  sizeY;
     }
-    public int getpositionX(){
+    public int getPositionX(){
         return positionX;
     }
-    public int getpositionY()
+    public int getPositionY()
     {
         return positionY;
     }

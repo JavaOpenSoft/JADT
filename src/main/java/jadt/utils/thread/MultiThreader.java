@@ -19,8 +19,8 @@ public class MultiThreader {
         tasks.get(threadIndex).start();
     }
     public void startAllTasks(){
-        for(int i=0;i<tasks.size();i++){
-            tasks.get(i).start();
+        for (ThreadTask task : tasks) {
+            task.start();
         }
     }
 

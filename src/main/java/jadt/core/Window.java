@@ -3,6 +3,7 @@ package jadt.core;
 import jadt.core.constants.WindowConstants;
 import jadt.core.hyperlink.Hyperlink;
 import jadt.layouts.*;
+import jadt.layouts.BoxLayout;
 import jadt.layouts.GridBagLayout;
 import jadt.templates.clock.Clock;
 import org.jetbrains.annotations.NotNull;
@@ -10,15 +11,14 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.*;
 import java.awt.*;
 import java.security.InvalidParameterException;
-
-public class Window extends AppComponent implements WindowConstants {
+@SuppressWarnings("all")
+public class Window  implements WindowConstants {
     private static final JFrame window = new JFrame();
     private final Dimension size = Toolkit.getDefaultToolkit ().getScreenSize();
     private int positionX = (int)size.width/2;
     private int positionY = (int)size.height/2;
     private int sizeX = 300;
     private int sizeY = 300;
-    private String Title;
     private boolean isVisible;
 
 
@@ -27,8 +27,43 @@ public class Window extends AppComponent implements WindowConstants {
         window.setSize(sizeX, sizeY);
         window.setLocation(positionX, positionY);
         this.setLocationOnScreen(Window.centre);
+        setLayout(new FreeFormLayout());
     }
-    public static void setTitleBarIcon(ImageIcon iconPath){
+    public Window(String Title) {
+        setTitle(Title);
+        window.setSize(400,400);
+        window.setLayout(null);
+        this.setLocationOnScreen(Window.centre);
+        setLayout(new FreeFormLayout());
+    }
+    public Window(String Title, int sizeX, int sizeY)
+    {
+        window.setTitle(Title);
+        window.setVisible(true);
+        window.setSize(sizeX,sizeY);
+        this.setLocationOnScreen(Window.centre);
+        setLayout(new FreeFormLayout());
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
+    }
+
+    public Window(String Title, int sizeX, int sizeY, int positionX, int positionY)
+    {
+        window.setTitle(Title);
+        window.setVisible(true);
+        window.setBounds(positionX,positionY,sizeX,sizeY);
+        window.setLayout(null);
+        this.setLocationOnScreen(Window.centre);
+        setLayout(new FreeFormLayout());
+        this.sizeX = sizeX;
+        this.sizeY = sizeY;
+        this.positionX = positionX;
+        this.positionY = positionY;
+    }
+    public String getTitle(){
+        return window.getTitle();
+    }
+    public static void setTitleBarIcon(@NotNull ImageIcon iconPath){
         window.setIconImage(iconPath.getImage());
     }
     public void show() {
@@ -37,14 +72,8 @@ public class Window extends AppComponent implements WindowConstants {
     public void hide() {
         window.setVisible(false);
     }
-    public Window(String Title) {
-        setTitle(Title);
-        window.setSize(400,400);
-
-    }
-
-    private void setPosition(int positionX, int positionY) {
-        window.setBounds(positionX,positionY,sizeX,sizeY);
+    public void setPosition(int positionX, int positionY) {
+        window.setLocation(positionX,positionY);
         this.positionX = positionX;
         this.positionY = positionY;
     }
@@ -55,27 +84,6 @@ public class Window extends AppComponent implements WindowConstants {
 
     public int getPositionY() {
         return positionY;
-    }
-
-    public Window(String Title, int sizeX, int sizeY)
-    {
-        window.setTitle(Title);
-        window.setVisible(true);
-        window.setSize(sizeX,sizeY);
-        this.sizeX = sizeX;
-        this.sizeY = sizeY;
-        this.Title = Title;
-    }
-    public Window(String Title, int sizeX, int sizeY, int positionX, int positionY)
-    {
-        window.setTitle(Title);
-        window.setVisible(true);
-        window.setBounds(positionX,positionY,sizeX,sizeY);
-        this.sizeX = sizeX;
-        this.sizeY = sizeY;
-        this.positionX = positionX;
-        this.positionY = positionY;
-        this.Title = Title;
     }
     public JFrame getComponent() {
         return window;
@@ -90,87 +98,87 @@ public class Window extends AppComponent implements WindowConstants {
 
     public int getSizeX(){return sizeX;}
     public int getSizeY() {return sizeY;}
-    public void add(Button button)
+    public void add(@NotNull Button button)
     {
         window.add(button.getButton());
     }
-    public void add(Label label)
+    public void add(@NotNull Label label)
     {
         window.add(label.getComponent());
     }
-    public void add(Clock clock)
+    public void add(@NotNull Clock clock)
     {
         if(clock.getClockType().equals("Digital"))window.add(clock.getDigitalClock());
         if(clock.getClockType().equals("Analog"))window.add(clock.getAnalogClock());
     }
-    public void add(Spinner spinner)
+    public void add(@NotNull Spinner spinner)
     {
         window.add(spinner.getComponent());
     }
-    public void add(CheckBox checkBox)
+    public void add(@NotNull CheckBox checkBox)
     {
         window.add(checkBox.getComponent());
     }
-    public void add(MenuBar menuBar)
+    public void add(@NotNull MenuBar menuBar)
     {
         window.add(menuBar.getComponent());
     }
-    public void add(PasswordField passwordField)
+    public void add(@NotNull PasswordField passwordField)
     {
         window.add(passwordField.getComponent());
     }
-    public void add(Slider slider)
+    public void add(@NotNull Slider slider)
     {
         window.add(slider.getComponent());
     }
-    public void add(TextField textField)
+    public void add(@NotNull TextField textField)
     {
         window.add(textField.getComponent());
     }
-    public void add(ToggleSwitch toggleSwitch)
+    public void add(@NotNull ToggleSwitch toggleSwitch)
     {
         window.add(toggleSwitch.getComponent());
     }
-    public void add(Panel panel)
+    public void add(@NotNull Panel panel)
     {
         window.add(panel.getComponent());
     }
-    public void add(Hyperlink hyperlink){window.add(hyperlink.getComponent());}
-    public void add(EditorPane editorPane){window.add(editorPane.getComponent());}
-    public void add(ExpandableButton expandableButton){window.add(expandableButton.getComponent());}
-    public void add(FormattedTextField formattedTextField){window.add(formattedTextField.getComponent());}
-    public void add(ImageFrame imageFrame){window.add(imageFrame.getComponent());}
-    public void add(PopupMenu popupMenu){window.add(popupMenu.getComponent());}
-    public void add(ProgressBar progressBar){window.add(progressBar.getComponent());}
-    public void add(RadioButton radioButton){window.add(radioButton.getComponent());}
-    public void add(ScrollPane scrollPane){window.add(scrollPane.getComponent());}
-    public void add(ScrollBar scrollBar, byte Type){window.add(scrollBar.getComponent(Type));}
-    public void add(Separator separator){window.add(separator.getComponent());}
-    public void add(TabbedPane tabbedPane){window.add(tabbedPane.getComponent());}
-    public void add(TextArea textArea){window.add(textArea.getComponent());}
-    public void add(TextPane textPane){window.add(textPane.getComponent());}
-    public void add(MacOSScreenMenuBar macOsScreenMenuBar){
+    public void add(@NotNull Hyperlink hyperlink){window.add(hyperlink.getComponent());}
+    public void add(@NotNull EditorPane editorPane){window.add(editorPane.getComponent());}
+    public void add(@NotNull ExpandableButton expandableButton){window.add(expandableButton.getComponent());}
+    public void add(@NotNull FormattedTextField formattedTextField){window.add(formattedTextField.getComponent());}
+    public void add(@NotNull ImageFrame imageFrame){window.add(imageFrame.getComponent());}
+    public void add(@NotNull PopupMenu popupMenu){window.add(popupMenu.getComponent());}
+    public void add(@NotNull ProgressBar progressBar){window.add(progressBar.getComponent());}
+    public void add(@NotNull RadioButton radioButton){window.add(radioButton.getComponent());}
+    public void add(@NotNull ScrollPane scrollPane){window.add(scrollPane.getComponent());}
+    public void add(@NotNull ScrollBar scrollBar, byte Type){window.add(scrollBar.getComponent(Type));}
+    public void add(@NotNull Separator separator){window.add(separator.getComponent());}
+    public void add(@NotNull TabbedPane tabbedPane){window.add(tabbedPane.getComponent());}
+    public void add(@NotNull TextArea textArea){window.add(textArea.getComponent());}
+    public void add(@NotNull TextPane textPane){window.add(textPane.getComponent());}
+    public void add(@NotNull MacOSScreenMenuBar macOsScreenMenuBar){
         macOsScreenMenuBar.enableScreenMenuBar();
     }
-    public void setLayout(jadt.layouts.FlowLayout flowLayout)
+    public void setLayout(jadt.layouts.@NotNull FlowLayout flowLayout)
     {
         window.setLayout(flowLayout.getLayout());
     }
-    public void setLayout(FreeFormLayout freeFormLayout)
+    public void setLayout(@NotNull FreeFormLayout freeFormLayout)
     {
         window.setLayout((LayoutManager) freeFormLayout.getLayout());
     }
-    public void setLayout(BoxLayouts boxLayouts, Window pane, int AXIS)
+    public void setLayout(@NotNull BoxLayout boxLayout, @NotNull Window pane,@NotNull int AXIS)
     {
-        window.setLayout(boxLayouts.getBoxLayout(pane.getComponent(), AXIS));
-        if(AXIS != BoxLayouts.X_AXIS &&AXIS != BoxLayouts.Y_AXIS) throw new InvalidParameterException("setLayout()" +
-                " Function AXIS Parameter is Invalid. Try To use 'BoxLayouts.Y_AXIS' or 'BoxLayouts.X_AXIS'");
+        window.setLayout(boxLayout.getBoxLayout(pane.getComponent(), AXIS));
+        if(AXIS != BoxLayout.X_AXIS &&AXIS != BoxLayout.Y_AXIS) throw new InvalidParameterException("setLayout()" +
+                " Function AXIS Parameter is Invalid. Try To use 'BoxLayout.Y_AXIS' or 'BoxLayout.X_AXIS'");
     }
-    public void setLayout(@NotNull BoxLayouts boxLayouts, Panel pane, int AXIS)
+    public void setLayout(@NotNull BoxLayout boxLayout, @NotNull Panel pane, @NotNull int AXIS)
     {
-        window.setLayout(boxLayouts.getBoxLayout(pane.getComponent(), AXIS));
-        if(AXIS != BoxLayouts.X_AXIS &&AXIS != BoxLayouts.Y_AXIS) throw new InvalidParameterException("setLayout()" +
-                " Function AXIS Parameter is Invalid. Try To use 'BoxLayouts.Y_AXIS' or 'BoxLayouts.X_AXIS'");
+        window.setLayout(boxLayout.getBoxLayout(pane.getComponent(), AXIS));
+        if(AXIS != BoxLayout.X_AXIS &&AXIS != BoxLayout.Y_AXIS) throw new InvalidParameterException("setLayout()" +
+                " Function AXIS Parameter is Invalid. Try To use 'BoxLayout.Y_AXIS' or 'BoxLayout.X_AXIS'");
     }
     public void setLayout(jadt.layouts.@NotNull CardLayout cardLayout)
     {
@@ -184,10 +192,8 @@ public class Window extends AppComponent implements WindowConstants {
     {
         window.setLayout(gridLayouts.getLayout());
     }
-    public void setLayout(jadt.layouts.@NotNull SpringLayout springLayouts)
-    {
-        window.setLayout(springLayouts.getLayout());
-    }
+    public void setLayout(jadt.layouts.@NotNull SpringLayout springLayouts) {window.setLayout(springLayouts.getLayout());}
+    public void setLayout(jadt.layouts.@NotNull BorderLayout borderLayouts) {window.setLayout(borderLayouts.getLayout());}
     public void setLocationOnScreen(Component component)
     {
         window.setLocationRelativeTo(component);
@@ -235,14 +241,10 @@ public class Window extends AppComponent implements WindowConstants {
         this.positionX = positionX;
         this.positionY = positionY;
     }
-    public void setLocationRelativeTo(AppComponent appComponent){
-        window.setLocationRelativeTo(appComponent);
-    }
     public void setTitle(String Title) {
         window.setTitle(Title);
-        this.Title = Title;
     }
-
+    public void centreOf(){}
     public void setDefaultCloseOperation(int index) {
         window.setDefaultCloseOperation(index);
     }

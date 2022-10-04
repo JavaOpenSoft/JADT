@@ -10,7 +10,9 @@ import javax.swing.ImageIcon;
 import java.awt.Image;
 
 
-public class ImageFrame extends AppComponent{
+@SuppressWarnings("FieldMayBeFinal")
+public class ImageFrame {
+    @SuppressWarnings("FieldMayBeFinal")
     private JLabel imageFrame = new JLabel();
     private int sizeX,sizeY,positionX,positionY;
     private final Dimension size = Toolkit.getDefaultToolkit().getScreenSize();

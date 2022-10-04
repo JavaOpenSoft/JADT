@@ -86,10 +86,11 @@ public class OSUtils {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(
                     process.getInputStream()));
 
-            String line = "";
+            String line;
             while ((line = bufferedReader.readLine()) != null) {
                 int i = 0;
                 info[i] = line;
+                //noinspection UnusedAssignment
                 i++;
             }
         } catch (IOException e) {

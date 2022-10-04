@@ -3,7 +3,8 @@ package jadt.core;
 import javax.swing.*;
 import java.awt.*;
 
-public class Menu extends AppComponent{
+@SuppressWarnings("ALL")
+public class Menu {
     private final JMenu menu = new JMenu();
     private String Text;
     private String FontName;
@@ -55,6 +56,7 @@ public class Menu extends AppComponent{
     public void add(Menu menu){
         this.menu.add(menu.getComponent());
     }
+    public void add(MenuItem menuItem){menu.add(menuItem.getComponent());}
     public JMenu getComponent(){
         return menu;
     }

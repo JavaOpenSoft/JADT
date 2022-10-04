@@ -3,7 +3,9 @@ package jadt.core;
 import javax.swing.*;
 import java.security.InvalidParameterException;
 
-public class ScrollPane extends AppComponent{
+@SuppressWarnings("FieldMayBeFinal")
+public class ScrollPane {
+    @SuppressWarnings("FieldMayBeFinal")
     private JScrollPane jScrollPane = new JScrollPane();
     public void add(ScrollBar scrollBar,String Position)
     {

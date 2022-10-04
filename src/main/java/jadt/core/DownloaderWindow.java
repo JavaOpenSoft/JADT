@@ -9,9 +9,13 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
+@SuppressWarnings("FieldMayBeFinal")
 public class DownloaderWindow extends Window{
+    @SuppressWarnings("FieldMayBeFinal")
     private JProgressBar progressBar = new JProgressBar();
+    @SuppressWarnings("FieldMayBeFinal")
     private FileTransfer fileTransfer = new FileTransfer();
+    @SuppressWarnings("FieldMayBeFinal")
     private MultiThreader multiThreader = new MultiThreader();
     private String urlString;
     /**

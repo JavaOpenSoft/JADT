@@ -7,9 +7,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.IOException;
-
-public class CheckBox extends AppComponent {
+@SuppressWarnings("all")
+public class CheckBox  {
     private final JCheckBox jCheckBox = new JCheckBox();
+
     private String FontName = "SansSerif";
     private short FontSize = 13;
     private String FontType = "Plain";
@@ -43,6 +44,9 @@ public class CheckBox extends AppComponent {
     }
     public JCheckBox getComponent() {
         return jCheckBox;
+    }
+    public String getFontName() {
+        return FontName;
     }
 
     public void setChecked(boolean state) {

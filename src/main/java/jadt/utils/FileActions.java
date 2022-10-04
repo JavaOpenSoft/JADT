@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileActions {
-    private static File file = null;
+    private File file;
     private BufferedWriter bufferedWriter;
     private BufferedReader bufferedReader;
     private String inPath,outPath;
@@ -39,7 +39,7 @@ public class FileActions {
     }
     public String[] getContentsOfFile() throws IOException {
         bufferedReader = new BufferedReader(new FileReader(file));
-        ArrayList<String> contents = new ArrayList<String>();
+        ArrayList<String> contents = new ArrayList<>();
         Scanner sc = new Scanner(file);
         int count = 0;
         while(sc.hasNextLine()) {
@@ -65,7 +65,7 @@ public class FileActions {
     public void createFolder(String FolderName,String path)
     {
         File theDir;
-        if(new SoftwareInfo().getOS().equals("Windows"))theDir = new File(path+"\\"+FolderName);
+        if(SoftwareInfo.getOS().equals("Windows"))theDir = new File(path+"\\"+FolderName);
         else theDir = new File(path+"/"+FolderName);
         if (!theDir.exists()){
             boolean temp = theDir.mkdir();
@@ -117,22 +117,22 @@ public class FileActions {
     {
         return outPath;
     }
-    public static long getFileSizeInBits() {
+    public long getFileSizeInBits() {
         return file.length() * 8;
     }
 
-    public static long getFileSizeInBytes() {
+    public long getFileSizeInBytes() {
         return file.length();
     }
 
-    public static long getFileSizeInKilobytes() {
+    public long getFileSizeInKilobytes() {
         return file.length() / 1024;
     }
-    public static long getFileSizeInMegabytes() {
+    public long getFileSizeInMegabytes() {
         return (long) (file.length() / Math.pow(1024, 2));
     }
 
-    public static long getFileSizeInGigabytes() {
+    public long getFileSizeInGigabytes() {
         return (long) (file.length() / Math.pow(1024, 3));
     }
 

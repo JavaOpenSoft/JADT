@@ -2,7 +2,9 @@ package jadt.core;
 
 import javax.swing.*;
 
-public class TextArea extends AppComponent{
+@SuppressWarnings("FieldMayBeFinal")
+public class TextArea {
+    @SuppressWarnings("FieldMayBeFinal")
     private JTextArea jTextArea = new JTextArea();
     private int positionX;
     private int positionY;
@@ -16,9 +18,7 @@ public class TextArea extends AppComponent{
     }
     public void setSize(int sizeX, int sizeY) {
         this.jTextArea.setSize(sizeX, sizeY);
-        this.positionX = positionX;
-        this.positionY = positionY;
-        this.sizeY = sizeY;
+        this.sizeX = sizeX;
         this.sizeY = sizeY;
 
     }
@@ -35,22 +35,20 @@ public class TextArea extends AppComponent{
         jTextArea.setBounds(positionX, positionY,sizeX,sizeY);
     }
 
-    @Override
     public int getPositionX() {
         return positionX;
     }
 
-    @Override
+
     public int getPositionY() {
         return positionY;
     }
 
-    @Override
+
     public int getSizeX() {
         return sizeX;
     }
 
-    @Override
     public int getSizeY() {
         return sizeY;
     }

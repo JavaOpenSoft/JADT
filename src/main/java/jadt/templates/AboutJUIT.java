@@ -3,15 +3,15 @@ package jadt.templates;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Objects;
-
+@SuppressWarnings("all")
 public class AboutJUIT {
     private JFrame frame = new JFrame();
-    private String pathOfFile = "juit/resources/Unknown.jpeg";
+    private String pathOfFile = "jadt/resources/JUITIMG.jpeg";
     private Image icon = Toolkit.getDefaultToolkit().getImage(pathOfFile);
     private JLabel IconImage = new JLabel("");
     private JLabel Author = new JLabel("Author: Rishon Jonathan");
-    private JLabel VersionNumber = new JLabel("Version 1.0_rc4");
-    public void ShowJUIDetails(int x, int y) {
+    private JLabel VersionNumber = new JLabel("Version 1.0_rc6");
+    public void ShowJADTDetails(int x, int y) {
         frame.setBounds(100, 100, 450, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);

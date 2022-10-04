@@ -28,7 +28,7 @@ public class Spinner {
         this.positionY = positionY;
     }
 
-    public int getpositionY() {
+    public int getPositionY() {
         return positionY;
     }
 

@@ -17,6 +17,7 @@ class DigitalClock extends JFrame {
     String day;
     String date;
 
+    @SuppressWarnings("SpellCheckingInspection")
     DigitalClock() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("My Clock Program");
@@ -26,6 +27,7 @@ class DigitalClock extends JFrame {
 
         timeFormat = new SimpleDateFormat("hh:mm:ss a");
         dayFormat = new SimpleDateFormat("EEEE");
+        //noinspection SpellCheckingInspection
         dateFormat = new SimpleDateFormat("MMMMM dd, yyyy");
 
         timeLabel = new JLabel();
@@ -50,6 +52,7 @@ class DigitalClock extends JFrame {
     }
 
     public void setTime() {
+        //noinspection InfiniteLoopStatement
         while (true) {
             time = timeFormat.format(Calendar.getInstance().getTime());
             timeLabel.setText(time);

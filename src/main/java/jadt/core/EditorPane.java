@@ -4,7 +4,9 @@ import javax.swing.*;
 import javax.swing.event.HyperlinkListener;
 
 
-public class EditorPane extends AppComponent{
+@SuppressWarnings("FieldMayBeFinal")
+public class EditorPane {
+    @SuppressWarnings("FieldMayBeFinal")
     private JEditorPane jeditorPane = new JEditorPane();
     private short sizeX = 600;
     private short sizeY = 600;
@@ -56,11 +58,11 @@ public class EditorPane extends AppComponent{
         return sizeY;
     }
 
-    public short getpositionY() {
+    public short getPositionY() {
         return positionY;
     }
 
-    public short getpositionX() {
+    public short getPositionX() {
         return positionX;
     }
     public JEditorPane getComponent(){

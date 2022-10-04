@@ -4,11 +4,18 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.Serial;
 import java.util.Calendar;
 import jadt.core.Window;
+
+@SuppressWarnings("all")
 public class Calender {
     private Window window;
     private Subclass sc = new Subclass(10,2022);
+    public jadt.core.Window
+    getWindowComponent(){
+        return window;
+    }
     public Calender(Window window) {
         this.window = window;
         // Month is zero based
@@ -40,6 +47,7 @@ public class Calender {
 
 }
 class Subclass extends JPanel {
+    @Serial
     private static final long   serialVersionUID    = 1L;
     protected int month;
     protected int year;
@@ -62,13 +70,13 @@ class Subclass extends JPanel {
         monthPanel.setLayout(new BorderLayout());
         monthPanel.setBackground(Color.WHITE);
         monthPanel.setForeground(Color.BLACK);
-        monthPanel.add(getCalanderTitle(), BorderLayout.NORTH);
+        monthPanel.add(getCalendarTitle(), BorderLayout.NORTH);
         monthPanel.add(getCalender(), BorderLayout.SOUTH);
 
         return monthPanel;
     }
 
-    protected JPanel getCalanderTitle() {
+    protected JPanel getCalendarTitle() {
         JPanel titlePanel = new JPanel(true);
         titlePanel.setBorder(BorderFactory
                 .createLineBorder(SystemColor.activeCaption));
@@ -104,10 +112,10 @@ class Subclass extends JPanel {
         Calendar maximum = (Calendar) calendar.clone();
         maximum.add(Calendar.MONTH, +1);
 
-        for (int i = 0; i < dayNames.length; i++) {
+        for (String dayName : dayNames) {
             JPanel dPanel = new JPanel(true);
             dPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-            JLabel dLabel = new JLabel(dayNames[i]);
+            JLabel dLabel = new JLabel(dayName);
             dPanel.add(dLabel);
             dayPanel.add(dPanel);
         }
@@ -153,4 +161,5 @@ class Subclass extends JPanel {
 
         return dayPanel;
     }
+
 }

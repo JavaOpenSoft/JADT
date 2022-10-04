@@ -7,7 +7,7 @@ import java.awt.event.FocusListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class TextField extends AppComponent{
+public class TextField {
     private final JTextField jTextField = new JTextField();
     public TextField(Icon icon) {
 
@@ -27,19 +27,13 @@ public class TextField extends AppComponent{
     public void editable(boolean isEditable) {
         jTextField.setEditable(isEditable);
     }
-    public void setHint(String hint, AppComponent appComponent) {
+    @Deprecated
+    public void setHint(String hint) {
         jTextField.setForeground(Color.gray);
         jTextField.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 jTextField.setText("");
-            }
-        });
-        appComponent.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                jTextField.setText(hint);
-                jTextField.setEditable(false);
             }
         });
         jTextField.addFocusListener(new FocusListener() {
@@ -54,6 +48,7 @@ public class TextField extends AppComponent{
                 jTextField.setText(hint);
             }
         });
+
     }
 
 
