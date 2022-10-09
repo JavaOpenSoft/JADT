@@ -1,5 +1,8 @@
 package jadt.core;
 
+import jadt.core.events.*;
+import org.jetbrains.annotations.NotNull;
+
 import javax.swing.*;
 import javax.swing.event.AncestorListener;
 import java.awt.*;
@@ -61,26 +64,8 @@ public class CheckBox  {
         jCheckBox.setForeground(color);
     }
 
-    public void addActionListener(ActionListener actionListener) {
-        jCheckBox.addActionListener(actionListener);
-    }
     public boolean isOpaque(){
         return jCheckBox.isOpaque();
-    }
-    public void removeActionListener(ActionListener actionListener) {
-        jCheckBox.removeActionListener(actionListener);
-    }
-    public void addMouseListener(MouseListener mouseListener) {
-        jCheckBox.addMouseListener(mouseListener);
-    }
-    public void removeMouseListener(MouseListener mouseListener) {
-        jCheckBox.removeMouseListener(mouseListener);
-    }
-    public void addAncestorListener(AncestorListener ancestorListener) {
-        jCheckBox.addAncestorListener(ancestorListener);
-    }
-    public void removeAncestorListener(AncestorListener ancestorListener) {
-        jCheckBox.removeAncestorListener(ancestorListener);
     }
     public void setTextFont(String FontName, String FontType, short size) {
         if(FontType.equals("Plain")) {
@@ -97,10 +82,51 @@ public class CheckBox  {
     public String getFontType(){
         return FontType;
     }
-    public void loadCustomFont(String FontFile) throws IOException, FontFormatException {
-        GraphicsEnvironment ge =
-                GraphicsEnvironment.getLocalGraphicsEnvironment();
-        ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(FontFile)));
-        this.FontName = new File(FontFile).getName();
+    public void addActionEvent(@NotNull ActionEvent event)
+    {
+        jCheckBox.addActionListener(event);
     }
+    public void removeActionEvent(@NotNull ActionEvent event){jCheckBox.removeActionListener(event);}
+
+    public void addAncestorEvent(@NotNull AncestorEvent event){jCheckBox.addAncestorListener(event);}
+    public void removeAncestorEvent(@NotNull AncestorEvent event){jCheckBox.removeAncestorListener(event);}
+
+    public void addChangeEvent(@NotNull ChangeEvent event){jCheckBox.addChangeListener(event);}
+    public void removeChangeEvent(@NotNull ChangeEvent event){jCheckBox.removeChangeListener(event);}
+
+    public void addComponentEvent(@NotNull ComponentEvent event){jCheckBox.addComponentListener(event);}
+    public void removeComponentEvent(@NotNull ComponentEvent event){jCheckBox.removeComponentListener(event);}
+
+    public void addContainerEvent(@NotNull ContainerEvent event){jCheckBox.addContainerListener(event);}
+    public void removeContainerEvent(@NotNull ContainerEvent event){jCheckBox.removeContainerListener(event);}
+
+    public void addFocusEvent(@NotNull FocusEvent event){jCheckBox.addFocusListener(event);}
+    public void removeFocusEvent(@NotNull FocusEvent event){jCheckBox.removeFocusListener(event);}
+
+    public void addHierarchyEvent(@NotNull HierarchyEvent event){jCheckBox.addHierarchyListener(event);}
+    public void removeHierarchyEvent(@NotNull HierarchyEvent event){jCheckBox.removeHierarchyListener(event);}
+
+    public void addHierarchyBoundsEvent(@NotNull HierarchyBoundsEvent event){jCheckBox.addHierarchyBoundsListener(event);}
+    public void removeHeirarchyBoundsEvent(@NotNull HierarchyBoundsEvent event){jCheckBox.addHierarchyBoundsListener(event);}
+
+    public void addInputMethodEvent(@NotNull InputMethodEvent event){jCheckBox.addInputMethodListener(event);}
+    public void removeInputMethodEvent(@NotNull InputMethodEvent event){jCheckBox.removeInputMethodListener(event);}
+
+    public void addItemEvent(@NotNull ItemEvent event){jCheckBox.addItemListener(event);}
+    public void removeItemEvent(@NotNull ItemEvent event){jCheckBox.removeItemListener(event);}
+
+    public void addKeyEvent(@NotNull KeyEvent event){jCheckBox.addKeyListener(event);}
+    public void removeKeyEvent(@NotNull KeyEvent event){jCheckBox.removeKeyListener(event);}
+
+    public void addMouseEvent(@NotNull MouseEvent event){jCheckBox.addMouseListener(event);}
+    public void removeMouseEvent(@NotNull MouseEvent event){jCheckBox.removeMouseListener(event);}
+
+    public void addMouseMotionEvent(@NotNull MouseMotionEvent event){jCheckBox.addMouseMotionListener(event);}
+    public void removeMouseMotionEvent(@NotNull MouseMotionEvent event){jCheckBox.removeMouseMotionListener(event);}
+
+    public void addMouseWheelEvent(@NotNull MouseWheelEvent event){jCheckBox.addMouseWheelListener(event);}
+    public void removeMouseWheelEvent(@NotNull MouseWheelEvent event){jCheckBox.removeMouseWheelListener(event);}
+
+    public void addVetoableChangeEvent(@NotNull VetoableChangeEvent event){jCheckBox.addVetoableChangeListener(event);}
+    public void removeVetoableChangeEvent(@NotNull VetoableChangeEvent event){jCheckBox.removeVetoableChangeListener(event);}
 }

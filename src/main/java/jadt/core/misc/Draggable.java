@@ -1,9 +1,10 @@
 package jadt.core.misc;
 
-import javax.swing.*;
+import javax.swing.JComponent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.util.InvalidPropertiesFormatException;
 
 @SuppressWarnings("ALL")
 public class Draggable {
@@ -54,7 +55,9 @@ public class Draggable {
         getJComponent().addMouseListener(mouseListener);
         getJComponent().addMouseMotionListener(mouseMotionListener);
         component = getJComponent();
-        setJComponent(null);
+    }
+    public Draggable(){
+
     }
     public void setJComponent(JComponent component) {
         this.component = component;
@@ -68,6 +71,24 @@ public class Draggable {
 
     public MouseListener getMouseListener() {
         return mouseListener;
+    }
+    public void enableDraggingAbilities() throws InvalidPropertiesFormatException {
+        if(component.equals(null)){
+            throw new InvalidPropertiesFormatException("JComponent is null. Add a JComponent using the setJComponent() method.");
+        }
+        getJComponent().addMouseListener(mouseListener);
+        getJComponent().addMouseMotionListener(mouseMotionListener);
+        component = getJComponent();
+        setJComponent(null);
+    }
+    public void removeDraggingAbilities() throws InvalidPropertiesFormatException {
+        if(component.equals(null)){
+            throw new InvalidPropertiesFormatException("JComponent is null. Add a JComponent using the setJComponent() method");
+        }
+        getJComponent().removeMouseListener(mouseListener);
+        getJComponent().removeMouseMotionListener(mouseMotionListener);
+        component = getJComponent();
+        setJComponent(null);
     }
 
 }
