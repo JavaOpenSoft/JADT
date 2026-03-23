@@ -47,15 +47,15 @@ public class Button  extends JADTComponent {
     }
 
     public String getText()
-    {return Text;}
+    {return jButton.getText();}
     public int GetPositionX()
-    {return positionX;}
+    {return jButton.getX();}
     public int GetPositionY()
-    {return positionY;}
+    {return jButton.getY();}
     public int getSizeX()
-    {return sizeX;}
+    {return jButton.getWidth();}
     public int getSizeY()
-    {return sizeY;}
+    {return jButton.getHeight();}
 
     //Add or remove "event" methods
     public void addActionEvent(@NotNull ActionEvent event)
@@ -163,6 +163,11 @@ public class Button  extends JADTComponent {
     }
 
     public JButton getButton() {
+        return jButton;
+    }
+
+    @Override
+    public JButton getComponent() {
         return jButton;
     }
 

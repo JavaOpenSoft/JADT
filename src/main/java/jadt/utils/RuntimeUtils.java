@@ -8,4 +8,11 @@ public class RuntimeUtils {
         return object.getClass().getProtectionDomain().getCodeSource().getLocation()
                 .toURI();
     }
+    public static void exit(){
+        System.exit(0);
+    }
+    public static void exit(int code) {
+        System.exit(code);
+    }
+
 }

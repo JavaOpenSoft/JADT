@@ -40,19 +40,19 @@ public class ProgressBar extends JADTComponent {
     }
 
     public int getSizeX() {
-        return SizeX;
+        return progressBar.getWidth();
     }
 
     public int getSizeY() {
-        return sizeY;
+        return progressBar.getHeight();
     }
 
     public int getPositionX() {
-        return positionX;
+        return progressBar.getX();
     }
 
     public int getPositionY() {
-        return positionY;
+        return progressBar.getY();
     }
 
     public JProgressBar getComponent(){

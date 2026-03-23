@@ -1,12 +1,12 @@
 package jadt.resources;
 
+import jadt.graphics.NativeImage;
+
 import java.awt.Image;
-import java.awt.Toolkit;
 
 public class DefaultImages {
-    public Image ErrorImage = Toolkit.getDefaultToolkit().getImage("jadt/resources/error.png");
-    public Image SuccessImage = Toolkit.getDefaultToolkit().getImage("jadt/resources/success.png");
-    public Image WarningImage = Toolkit.getDefaultToolkit().getImage("jadt/resources/error.png");
-    public Image AboutImage = Toolkit.getDefaultToolkit().getImage("jadt/resources/About.png");
+    public Image ErrorImage = NativeImage.fromPath("/jadt/resources/error.png").getImage();
+    public Image SuccessImage = NativeImage.fromPath("/jadt/resources/success.png").getImage();
+    public Image WarningImage = NativeImage.fromPath("/jadt/resources/error.png").getImage();
+    public Image AboutImage = NativeImage.fromPath("/jadt/resources/About.png").getImage();
 }
-

@@ -3,12 +3,13 @@ package jadt.core;
 import jadt.JADTComponent;
 import jadt.core.misc.DraggableComponent;
 import jadt.core.misc.Shape;
-import jadt.templates.notifications.SuccessNotification;
 import jadt.events.*;
+import jadt.graphics.NativeImage;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JLabel;
 import java.awt.Dimension;
+import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.util.Objects;
 import javax.swing.ImageIcon;
@@ -21,6 +22,7 @@ public class ImageFrame extends JADTComponent {
     private JLabel imageFrame = new JLabel();
     private DraggableComponent draggableComponent;
     private int sizeX,sizeY,positionX,positionY;
+    private NativeImage nativeImage;
     private final Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
     private final int posX = size.width;
     private final int posY = size.height;
@@ -30,21 +32,26 @@ public class ImageFrame extends JADTComponent {
         this.positionY = positionY;
         this.sizeX = sizeX;
         this.sizeY = sizeY;
+        refreshDisplayedImage();
     }
     public void setImage(String filePathWithName)
     {
-        imageFrame.setIcon(new ImageIcon(Objects.requireNonNull(SuccessNotification.class.getResource(filePathWithName))));
-        imageFrame.setVisible(true);
+        setNativeImage(NativeImage.fromPath(filePathWithName));
     }
     public void setImage(Image image)
     {
-        imageFrame.setIcon(new ImageIcon(image));
+        setNativeImage(NativeImage.fromImage(image));
+    }
+    public void setNativeImage(NativeImage nativeImage) {
+        this.nativeImage = nativeImage;
+        refreshDisplayedImage();
         imageFrame.setVisible(true);
     }
     public void setSize(int sizeX, int sizeY){
         imageFrame.setSize(sizeX,sizeY);
         this.sizeX = sizeX;
         this.sizeY = sizeY;
+        refreshDisplayedImage();
     }
     public void setPosition(int positionX, int positionY){
         imageFrame.setBounds(positionX,positionY,getSizeX(),getSizeY());
@@ -79,21 +86,25 @@ public class ImageFrame extends JADTComponent {
         return imageFrame;
     }
 
+    public NativeImage getNativeImage() {
+        return nativeImage;
+    }
+
     public int getSizeX() {
-        return sizeX;
+        return imageFrame.getWidth();
     }
 
 
     public int getSizeY() {
-        return sizeY;
+        return imageFrame.getHeight();
     }
 
     public int getPositionX() {
-        return positionX;
+        return imageFrame.getX();
     }
 
     public int getPositionY() {
-        return positionY;
+        return imageFrame.getY();
     }
     public JLabel getComponent(){
         return imageFrame;
@@ -145,11 +156,25 @@ public class ImageFrame extends JADTComponent {
     }
     public void removeIcon(){
         imageFrame.setIcon(null);
+        nativeImage = null;
     }
     public void setPreferredSize(int sizeX, int sizeY) { imageFrame.setPreferredSize(new Dimension(sizeX,sizeY)); }
     public void setMaximumSize(int sizeX, int sizeY) { imageFrame.setMaximumSize(new Dimension(sizeX, sizeY)); }
     public void setMinimumSize(int sizeX, int sizeY) { imageFrame.setMinimumSize(new Dimension(sizeX, sizeY)); }
     public void setShape(Shape shape){
         imageFrame.setMixingCutoutShape(shape);
+    }
+
+    private void refreshDisplayedImage() {
+        if (nativeImage == null) {
+            return;
+        }
+        NativeImage imageToDisplay = nativeImage;
+        int width = imageFrame.getWidth();
+        int height = imageFrame.getHeight();
+        if (width > 0 && height > 0) {
+            imageToDisplay = nativeImage.scaled(width, height);
+        }
+        imageFrame.setIcon(imageToDisplay.getImageIcon());
     }
 }

@@ -21,7 +21,7 @@ public class Spinner extends JADTComponent {
     int positionX,positionY,sizeX,sizeY;
 
     public int getPositionX() {
-        return positionX;
+        return jSpinner.getX();
     }
     public  void setSize(int sizeX, int sizeY)
     {
@@ -37,15 +37,15 @@ public class Spinner extends JADTComponent {
     }
 
     public int getPositionY() {
-        return positionY;
+        return jSpinner.getY();
     }
 
     public int getSizeX() {
-        return sizeX;
+        return jSpinner.getWidth();
     }
 
     public int getSizeY() {
-        return sizeY;
+        return jSpinner.getHeight();
     }
 
 
@@ -94,6 +94,10 @@ public class Spinner extends JADTComponent {
     }
     public int getValue()
     {
+        Object spinnerValue = jSpinner.getValue();
+        if (spinnerValue instanceof Number number) {
+            return number.intValue();
+        }
         return value;
     }
 

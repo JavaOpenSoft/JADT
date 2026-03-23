@@ -5,6 +5,8 @@ import jadt.core.hyperlink.HyperLinkButton;
 import jadt.core.hyperlink.Hyperlink;
 import jadt.core.misc.Shape;
 import jadt.events.*;
+import jadt.graphics.NativeImage;
+import jadt.laf.UI;
 import jadt.layouts.FreeFormLayout;
 import jadt.layouts.GridBagLayout;
 import jadt.templates.clock.Clock;
@@ -15,13 +17,18 @@ import java.awt.*;
 import java.security.InvalidParameterException;
 
 public class Frame extends JADTComponent {
-    private final JWindow window = new JWindow();
+    private final JWindow window = createWindow();
     private final Dimension screenSize = Toolkit.getDefaultToolkit ().getScreenSize();
     private int positionX = screenSize.width /2;
     private int positionY = screenSize.height /2;
     private int sizeX = 300;
     private int sizeY = 300;
     private boolean isVisible;
+
+    private static JWindow createWindow() {
+        UI.bootstrapDefaults();
+        return new JWindow();
+    }
 
 
     public Frame() {
@@ -56,6 +63,9 @@ public class Frame extends JADTComponent {
     public void setTitleBarIcon(@NotNull ImageIcon iconPath){
         window.setIconImage(iconPath.getImage());
     }
+    public void setTitleBarIcon(@NotNull NativeImage icon) {
+        window.setIconImage(icon.getImage());
+    }
     public void show() {
         window.setVisible(true);
     }
@@ -69,19 +79,19 @@ public class Frame extends JADTComponent {
     }
 
     public int getPositionX() {
-        return positionX;
+        return window.getX();
     }
 
     public int getPositionY() {
-        return positionY;
+        return window.getY();
     }
     @Override
     public JWindow getComponent() {
         return window;
     }
 
-    public int getSizeX(){return sizeX;}
-    public int getSizeY() {return sizeY;}
+    public int getSizeX(){return window.getWidth();}
+    public int getSizeY() {return window.getHeight();}
     public void add(@NotNull Clock clock)
     {
         if(clock.getClockType().equals("Digital"))window.add(clock.getDigitalClock());

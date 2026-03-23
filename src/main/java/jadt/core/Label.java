@@ -49,18 +49,18 @@ public class Label extends JADTComponent {
     public JLabel getComponent()
     {return label;}
     public int GetPositionX()
-    {return positionX;}
+    {return label.getX();}
     public int GetPositionY()
     {
-        return positionY;
+        return label.getY();
     }
     public int getSizeX()
     {
-        return sizeX;
+        return label.getWidth();
     }
     public int getSizeY()
     {
-        return sizeY;
+        return label.getHeight();
     }
     public void SetPosition(int positionX,int positionY)
     {
@@ -96,7 +96,7 @@ public class Label extends JADTComponent {
     }
     public short getFontSize()
     {
-        return this.size;
+        return (short) label.getFont().getSize();
     }
     public void setBounds(int sizeX, int sizeY, int positionX, int positionY){
         label.setBounds(positionX, positionY, sizeX, sizeY);

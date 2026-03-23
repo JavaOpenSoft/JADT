@@ -8,7 +8,9 @@ import jadt.core.hyperlink.HyperLinkButton;
 import jadt.core.hyperlink.Hyperlink;
 import jadt.core.misc.Shape;
 import jadt.events.*;
+import jadt.graphics.NativeImage;
 import jadt.graphics.Gradient;
+import jadt.laf.UI;
 import jadt.layouts.FreeFormLayout;
 import jadt.layouts.BoxLayout;
 import jadt.layouts.GridBagLayout;
@@ -22,12 +24,17 @@ import java.security.InvalidParameterException;
 import org.jetbrains.annotations.NotNull;
 @SuppressWarnings("all")
 public class Window extends JADTComponent implements WindowConstants {
-    private static JFrame window = new JFrame();
+    private static final JFrame window = createWindow();
     private final Dimension screenSize = Toolkit.getDefaultToolkit ().getScreenSize();
     private int positionX = (int) screenSize.width/2;
     private int positionY = (int) screenSize.height/2;
     private int sizeX = 300;
     private int sizeY = 300;
+
+    private static JFrame createWindow() {
+        UI.bootstrapDefaults();
+        return new JFrame();
+    }
 
 
     public Window() {
@@ -78,6 +85,9 @@ public class Window extends JADTComponent implements WindowConstants {
     public void setTitleBarIcon(@NotNull ImageIcon iconPath){
         window.setIconImage(iconPath.getImage());
     }
+    public void setTitleBarIcon(@NotNull NativeImage icon) {
+        window.setIconImage(icon.getImage());
+    }
     public void show() {
         window.setVisible(true);
     }
@@ -91,11 +101,11 @@ public class Window extends JADTComponent implements WindowConstants {
     }
 
     public int getPositionX() {
-        return positionX;
+        return window.getX();
     }
 
     public int getPositionY() {
-        return positionY;
+        return window.getY();
     }
     public JFrame getComponent() {
         return window;
@@ -108,8 +118,8 @@ public class Window extends JADTComponent implements WindowConstants {
         if(WindowNumber == Window.exitOnClose) window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    public int getSizeX(){return sizeX;}
-    public int getSizeY() {return sizeY;}
+    public int getSizeX(){return window.getWidth();}
+    public int getSizeY() {return window.getHeight();}
     public void add(@NotNull HyperLinkButton hyperLinkButton){window.add(hyperLinkButton.getComponent());}
     public void add(@NotNull Button button)
     {
