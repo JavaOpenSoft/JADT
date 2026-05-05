@@ -151,8 +151,8 @@ public class Frame extends JADTComponent {
     public void add(@NotNull TextArea textArea){window.add(textArea.getComponent());}
     public void add(@NotNull TextPane textPane){window.add(textPane.getComponent());}
     public void add(@NotNull HyperLinkButton hyperlink){window.add(hyperlink.getComponent());}
-    public void add(@NotNull MacOSScreenMenuBar macOsScreenMenuBar){
-        macOsScreenMenuBar.enableScreenMenuBar();
+    public void add(@NotNull MacOSMenuBar macOSMenuBar){
+        MacOSMenuBar.enableScreenMenuBar();
     }
     public void remove(@NotNull Clock clock)
     {
@@ -212,8 +212,8 @@ public class Frame extends JADTComponent {
     public void remove(@NotNull TabbedPane tabbedPane){window.remove(tabbedPane.getComponent());}
     public void remove(@NotNull TextArea textArea){window.remove(textArea.getComponent());}
     public void remove(@NotNull TextPane textPane){window.remove(textPane.getComponent());}
-    public void remove(@NotNull MacOSScreenMenuBar macOsScreenMenuBar){
-        macOsScreenMenuBar.disableScreenMenuBar();
+    public void remove(@NotNull MacOSMenuBar macOSMenuBar){
+        macOSMenuBar.disableScreenMenuBar();
     }
     public void remove(@NotNull HyperLinkButton hyperLinkButton){window.remove(hyperLinkButton.getComponent());}
     public void addComponentEvent(@NotNull ComponentEvent event){window.addComponentListener(event);}

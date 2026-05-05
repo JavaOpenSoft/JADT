@@ -167,8 +167,8 @@ public class Panel extends JADTComponent {
     public void remove(@NotNull TextPane textPane){
         panel.remove(textPane.getComponent());}
 
-    public void remove(@NotNull MacOSScreenMenuBar macOsScreenMenuBar){
-        macOsScreenMenuBar.disableScreenMenuBar();
+    public void remove(@NotNull MacOSMenuBar macOSMenuBar){
+        macOSMenuBar.disableScreenMenuBar();
     }
 
     public void setLayout(jadt.layouts.@NotNull FlowLayout flowLayout)

@@ -203,8 +203,8 @@ public class Window extends JADTComponent implements WindowConstants {
 
     public void add(@NotNull TextPane textPane){window.add(textPane.getComponent());}
 
-    public void add(@NotNull MacOSScreenMenuBar macOsScreenMenuBar){
-        macOsScreenMenuBar.enableScreenMenuBar();
+    public void add(@NotNull MacOSMenuBar macOSMenuBar){
+        macOSMenuBar.enableScreenMenuBar();
     }
 
     public void remove(@NotNull Button button) {window.remove(button.getButton());}
@@ -265,8 +265,8 @@ public class Window extends JADTComponent implements WindowConstants {
 
     public void remove(@NotNull TextPane textPane){window.remove(textPane.getComponent());}
 
-    public void remove(@NotNull MacOSScreenMenuBar macOsScreenMenuBar){
-        macOsScreenMenuBar.disableScreenMenuBar();
+    public void remove(@NotNull MacOSMenuBar macOSMenuBar){
+        macOSMenuBar.disableScreenMenuBar();
     }
 
     public void addComponentEvent(@NotNull ComponentEvent event){window.addComponentListener(event);}
